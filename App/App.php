@@ -7,6 +7,11 @@
 
 	class App
 	{
+		private $controller;
+		private $controllerFile;
+		private $controllerName;
+		private $params;
+		private $action;
 
 		public function __construct()
 		{
