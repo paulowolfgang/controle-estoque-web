@@ -7,9 +7,9 @@
 
 	class App
 	{
-		private $controller;
+		public $controllerName;
+		private $controller; 
 		private $controllerFile;
-		private $controllerName;
 		private $params;
 		private $action;
 
@@ -35,4 +35,26 @@
 			
 
 		}
+
+		public function url ()
+		{
+	        if (isset($_GET['url']))
+	        {
+	        	$path = $_GET['url'];
+	            $path = rtrim($path, '/');
+	            $path = filter_var($path, FILTER_SANITIZE_URL); 
+
+	            $path = explode('/', $path);
+
+	            $this->controller  = $this->verificaArray($path, 0); //Posição do controller
+	            $this->action      = $this->verificaArray($path, 1); //Posição da ação
+
+	            if ($this->verificaArray($path, 2)) //Posição dos parâmetros
+	            {
+	                unset($path[0]);
+	                unset($path[1]);
+	                $this->params = array_values($path);
+	            }
+	        }
+    	}
 	}
