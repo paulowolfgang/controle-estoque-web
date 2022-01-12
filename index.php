@@ -1,10 +1,9 @@
 <?php
 
 	use App\App;
-	use App\Libs\Erro;
+	use App\Libs\Error;
 
 	session_start();
-
 	error_reporting(E_ALL & ~E_NOTICE);
 
 	require_once 'vendor\autoload.php';
@@ -14,6 +13,6 @@
     	$app = new App();
     	$app->run();
 	} catch(\Exception $e) {
-    	$oError = new Erro($e);
+    	$oError = new Error($e);
     	$oError->render();
 	}
