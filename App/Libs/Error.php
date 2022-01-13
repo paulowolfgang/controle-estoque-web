@@ -4,7 +4,7 @@
 
 	use Exception;
 
-	class Erro
+	class Error
 	{
 		private $message;
 		private $code;
