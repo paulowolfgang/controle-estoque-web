@@ -16,7 +16,11 @@
 		{
 			$viewVar = $this->getViewVar();
 
-			require_once PATH . '/App/Views/' . $view . '.php';
+			//Monta o layout da página
+			require_once PATH . '/App/Views/layouts/header.php';
+			require_once PATH . '/App/Views/layouts/menu.php';
+        	require_once PATH . '/App/Views/' . $view . '.php';
+        	require_once PATH . '/App/Views/layouts/footer.php';
 		}
 
 		public function redirect($view)
