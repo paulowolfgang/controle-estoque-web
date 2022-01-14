@@ -16,7 +16,7 @@
     	<![endif]-->
 		
 		<!-- ### Ícone do Sistema ### -->
-		<link rel="icon" href="img/favicon.png">
+		<link rel="icon" href="http://<?php echo APP_HOST; ?>/public/img/favicon.ico">
 
 		<title>
 			<?php echo TITLE; ?>
