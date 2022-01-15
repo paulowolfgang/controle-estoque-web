@@ -1,3 +1,3 @@
-<div>
-     <h1><?php echo TITLE; ?></h1>
+<div class="container">
+     Página de início
 </div>

@@ -7,16 +7,18 @@
 		protected $app;
 		private   $viewVar;
 
+		// Função construtora
 		public function __construct($app)
 		{
 			$this->setViewParam('nameController', $app->getControllerName());
 		}
 
+		// Função que monta o layout da aplicação
 		public function render($view)
 		{
 			$viewVar = $this->getViewVar();
 
-			//Monta o layout da página
+			// Arquivos com as partes do layout da página
 			require_once PATH . '/App/Views/layouts/header.php';
 			require_once PATH . '/App/Views/layouts/menu.php';
         	require_once PATH . '/App/Views/' . $view . '.php';

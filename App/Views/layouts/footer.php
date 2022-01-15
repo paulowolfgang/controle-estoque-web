@@ -1,8 +1,10 @@
 	<footer class="footer">
     	<div class="container">
-        	<p class="text-muted">
-	        	Sistema de Controle de Estoque 2022
-        	</p>
+        	<center>
+        		<p class="text-muted">
+        			Sistema de Controle de Estoque | Todos os Direitos Reservados - 2022
+        		</p>
+        	</center>
     	</div>
 	</footer>
 
