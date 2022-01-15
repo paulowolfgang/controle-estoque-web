@@ -22,7 +22,7 @@
         	define('PATH'        , realpath('./'));
         	define('TITLE'       , "Sistema de Controle de Estoque");
         	define('DB_HOST'     , "localhost");
-        	define('DB_NAME'     , "db_estoque");
+        	define('DB_NAME'     , "db_estoque_app");
         	define('DB_USER'     , "root");
         	define('DB_PASSWORD' , "");
         	define('DB_DRIVER'   , "mysql");
