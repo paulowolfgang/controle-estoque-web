@@ -35,11 +35,16 @@
 
 			if($userDAO->save($user))
 			{
-				$this->redirect('/user/sucsess');
+				$this->redirect('/user/success');
 			}else{
 				//Lógica de tratamento de erro (Sessão)
 			}
 		}
+		
+		public function success()
+	    {
+	        $this->render('/user/success');
+	    }
 
 		public function index()
 		{
