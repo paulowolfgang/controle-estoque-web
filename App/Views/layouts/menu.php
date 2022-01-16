@@ -9,10 +9,15 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#"> Início <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="http://<?php echo APP_HOST; ?>"> Início <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"> Usuário </a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Usuário
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/user/register">Cadastro</a>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled"> Fornecedor </a>
