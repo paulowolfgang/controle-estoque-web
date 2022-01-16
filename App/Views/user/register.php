@@ -9,36 +9,36 @@
      </center>
      <!-- ### Início do formulário de cadastro -->
      <div class="mb-5">
-          <form>
+          <form action="http://<?php echo APP_HOST; ?>/user/save" method="post">
                <div class="row">
                     <div class="col-sm-12 form-group">
-                         <label for="exampleInputEmail1"> Nome do usuário </label>
-                         <input type="email" class="form-control" id="nameUser" aria-describedby="emailHelp">
+                         <label> Nome do usuário </label>
+                         <input type="text" class="form-control" name="nameUser" aria-describedby="emailHelp">
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
-                         <label for="exampleInputEmail1"> E-mail do usuário </label>
-                         <input type="email" class="form-control" id="emailUser" aria-describedby="emailHelp">
+                         <label> E-mail do usuário </label>
+                         <input type="email" class="form-control" name="emailUser" aria-describedby="emailHelp">
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
-                         <label for="exampleInputPassword1"> Senha do usuário </label>
-                         <input type="password" class="form-control" id="passUser">
+                         <label> Senha do usuário </label>
+                         <input type="password" class="form-control" name="passUser">
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
-                         <label for="exampleFormControlSelect1">Tipo do usuário</label>
-                         <select class="form-control" id="typeUser">
+                         <label> Tipo do usuário </label>
+                         <select class="form-control" name="typeUser">
                               <option> Administrador </option>
                               <option> Conferente </option>
                          </select>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
-                         <label for="exampleFormControlSelect1">Status do usuário</label>
-                         <select class="form-control" id="statusUser">
+                         <label> Status do usuário </label>
+                         <select class="form-control" name="statusUser">
                               <option>Ativado</option>
                               <option>Desativado</option>
                         </select>
