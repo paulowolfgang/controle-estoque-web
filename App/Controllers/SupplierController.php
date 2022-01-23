@@ -18,6 +18,31 @@
 		public function save()
 		{
 			// Implementação do método de salvar
+			$supplier = new Supplier();
+			
+			$supplier->setNameSupplier($_POST['nameSupplier']);
+			$supplier->setSocialSupplier($_POST['socialSupplier']);
+			$supplier->setAdressSupplier($_POST['adressSupplier']);
+			$supplier->setCitySupplier($_POST['citySupplier']);
+			$supplier->setStateSupplier($_POST['stateSupplier']);
+			$supplier->setCnpjSupplier($_POST['cnpjSupplier']);
+			$supplier->setEmailSupplier($_POST['emailSupplier']);
+			$supplier->setPhoneSupplier($_POST['phoneSupplier']);
+			
+			
+			echo "<pre>";
+				echo var_dump($supplier);
+			echo "</pre>";
+			
+			
+			//$supplierDAO = new SupplierDAO();
+			/*
+			if($supplierDAO->save($supplier))
+			{
+				$this->redirect('/supplier/success');
+			}else{
+				//Lógica de tratamento de erro (Sessão)
+			}*/
 		}
 		
 		public function success()
