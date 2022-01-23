@@ -27,8 +27,13 @@
             <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/supplier/register">Cadastro</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled"> Produto </a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Produto
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/product/register">Produto</a>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled"> Sair </a>
