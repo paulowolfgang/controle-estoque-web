@@ -7,6 +7,7 @@
                </h2>
           </div>     
      </center>
+
      <!-- ### Início do formulário de cadastro -->
      <div class="mb-5">
           <form action="http://<?php echo APP_HOST; ?>/user/save" method="post">
@@ -47,4 +48,5 @@
                <button type="submit" class="btn btn-success">Cadastrar</button>
           </form>
      </div>
+     <!-- ### Fim do formulário de cadastro -->
 </div>
