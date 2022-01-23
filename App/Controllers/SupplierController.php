@@ -29,20 +29,20 @@
 			$supplier->setEmailSupplier($_POST['emailSupplier']);
 			$supplier->setPhoneSupplier($_POST['phoneSupplier']);
 			
-			
+			/*
 			echo "<pre>";
 				echo var_dump($supplier);
 			echo "</pre>";
+			*/
 			
+			$supplierDAO = new SupplierDAO();
 			
-			//$supplierDAO = new SupplierDAO();
-			/*
 			if($supplierDAO->save($supplier))
 			{
 				$this->redirect('/supplier/success');
 			}else{
 				//Lógica de tratamento de erro (Sessão)
-			}*/
+			}
 		}
 		
 		public function success()

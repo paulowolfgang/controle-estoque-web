@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> Estado do fornecedor </label>
-                         <input type="email" class="form-control" name="stateSupplier">
+                         <input type="text" class="form-control" name="stateSupplier">
                     </div>
                </div>
                <div class="row">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> Telefone do fornecedor </label>
-                         <input type="email" class="form-control" name="phoneSupplier">
+                         <input type="text" class="form-control" name="phoneSupplier">
                     </div>
                </div>
                <button type="submit" class="btn btn-success">Cadastrar</button>

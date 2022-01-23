@@ -2,7 +2,7 @@
 
 namespace App\Models\DAO;
 
-//use App\Models\Entities\Supplier;
+use App\Models\Entities\Supplier;
 
 class SupplierDAO extends BaseDAO
 {
@@ -10,14 +10,14 @@ class SupplierDAO extends BaseDAO
     public  function save(Supplier $supplier) {
         try {
 
-            $nameSupplier   = $user->getNameSupplier();
-            $socialSupplier = $user->getSocialSupplier();
-            $adressSupplier = $user->getAdressSupplier();
-            $citySupplier   = $user->getCitySupplier();
-            $stateSupplier  = $user->getStateSupplier();
-            $cnpjSupplier   = $user->getCnpjSupplier();
-            $emailSupplier  = $user->getEmailSupplier();
-            $phoneSupplier  = $user->getPhoneSupplier();
+            $nameSupplier   = $supplier->getNameSupplier();
+            $socialSupplier = $supplier->getSocialSupplier();
+            $adressSupplier = $supplier->getAdressSupplier();
+            $citySupplier   = $supplier->getCitySupplier();
+            $stateSupplier  = $supplier->getStateSupplier();
+            $cnpjSupplier   = $supplier->getCnpjSupplier();
+            $emailSupplier  = $supplier->getEmailSupplier();
+            $phoneSupplier  = $supplier->getPhoneSupplier();
 
             return $this->insert(
                 'fornecedor', // Nome da tabela do banco
@@ -25,10 +25,10 @@ class SupplierDAO extends BaseDAO
                 [
                     ':nome_fantasia_fornecedor' =>$nameSupplier,
                     ':razao_social_fornecedor'  =>$socialSupplier,
-                    ':cnpj_fornecedor'          =>$adressSupplier,
-                    ':endereco_fornecedor'      =>$citySupplier,
-                    ':cidade_fornecedor'        =>$stateSupplier,
-                    ':uf_fornecedor'            =>$cnpjSupplier,
+                    ':cnpj_fornecedor'          =>$cnpjSupplier,
+                    ':endereco_fornecedor'      =>$adressSupplier,
+                    ':cidade_fornecedor'        =>$citySupplier,
+                    ':uf_fornecedor'            =>$stateSupplier,
                     ':email_fornecedor'         =>$emailSupplier,
                     ':telefone_fornecedor'      =>$phoneSupplier
                 ]
