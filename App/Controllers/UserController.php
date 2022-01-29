@@ -39,7 +39,7 @@
 			$userDAO = new UserDAO();
 
 			if($userDAO->checksEmail($_POST['emailUser'])){
-	            Session::saveMenssage("E-mail não disponível!");
+	            Session::saveMessage("E-mail não disponível!");
 	            $this->redirect('/user/register');
 	        }
 
