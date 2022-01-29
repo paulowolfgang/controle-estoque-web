@@ -6,8 +6,23 @@ use App\Models\Entities\User;
 
 class UserDAO extends BaseDAO
 {
+    public function checksEmail($email)
+    {
+        try {
 
-    public  function save(User $user) {
+            $query = $this->select(
+                "SELECT email_usuario FROM usuario WHERE email_usuario = '$email'"
+            );
+
+            return $query->fetch();
+
+        }catch (Exception $e){
+            throw new \Exception("Erro ao acessar os dados.", 500);
+        }
+    }
+
+    public  function save(User $user)
+    {
         try {
 
             $nameUser   = $user->getNameUser();

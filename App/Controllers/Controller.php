@@ -2,6 +2,8 @@
 
 	namespace App\Controllers;
 
+	use App\Libs\Session;
+
 	abstract class Controller
 	{
 		protected $app;
@@ -17,6 +19,7 @@
 		public function render($view)
 		{
 			$viewVar = $this->getViewVar();
+			$Session  = Session::class;
 
 			// Arquivos com as partes do layout da página
 			require_once PATH . '/App/Views/layouts/header.php';

@@ -8,25 +8,30 @@
           </div>     
      </center>
 
-     <!-- ### Início do formulário de cadastro -->
+     <!-- ###  ### -->     
+     <?php if($Session::returnMessage()){ ?>
+          <div class="alert alert-warning" role="alert"><?php echo $Session::returnMessage(); ?></div>
+     <?php } ?>
+
+     <!-- ### Início do formulário de cadastro ### -->
      <div class="mb-5">
           <form action="http://<?php echo APP_HOST; ?>/user/save" method="post">
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> Nome do usuário </label>
-                         <input type="text" class="form-control" name="nameUser" aria-describedby="emailHelp">
+                         <input type="text" class="form-control" name="nameUser" value="<?php echo $Session::returnValueForm('nameUser'); ?>" required >
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> E-mail do usuário </label>
-                         <input type="email" class="form-control" name="emailUser" aria-describedby="emailHelp">
+                         <input type="email" class="form-control" name="emailUser" value="<?php echo $Session::returnValueForm('emailUser'); ?>" required >
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> Senha do usuário </label>
-                         <input type="password" class="form-control" name="passUser">
+                         <input type="password" class="form-control" name="passUser" required>
                     </div>
                </div>
                <div class="row">

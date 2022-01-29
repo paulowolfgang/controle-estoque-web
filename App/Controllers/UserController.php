@@ -2,7 +2,7 @@
 
 	namespace App\Controllers;
 
-	//use App\Libs\Sessao;
+	use App\Libs\Session;
 	use App\Models\DAO\UserDAO;
 	use App\Models\Entities\User;
 
@@ -12,6 +12,9 @@
 		public function register()
 		{
 			$this->render('/user/register');
+
+			Session::clearForm();
+        	Session::clearMessage();
 		}
 
 		// Método que salva um novo cadastro de usuário
@@ -30,8 +33,15 @@
 				echo var_dump($user);
 			echo "</pre>";
 			*/
+
+			Session::saveForm($_POST);
 			
 			$userDAO = new UserDAO();
+
+			if($userDAO->checksEmail($_POST['emailUser'])){
+	            Session::saveMenssage("E-mail não disponível!");
+	            $this->redirect('/user/register');
+	        }
 
 			if($userDAO->save($user))
 			{
@@ -43,7 +53,14 @@
 		
 		public function success()
 	    {
-	        $this->render('/user/success');
+	        if(Session::returnValueForm('nameUser')) {
+	            $this->render('/user/success');
+
+	            Session::clearForm();
+	            Session::clearMessage();
+	        }else{
+	            $this->redirect('/');
+	        }
 	    }
 
 		public function index()
