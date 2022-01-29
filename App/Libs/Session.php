@@ -23,7 +23,7 @@ class Session
     public static function existsForm(){
         return (isset($_SESSION['form'])) ? $_SESSION['form'] : "";
     }
-
+    
     public static function clearForm(){
         unset($_SESSION['form']);
     }
@@ -34,5 +34,19 @@ class Session
 
     public static function returnValueForm($key){
         return (isset($_SESSION['form'][$key])) ? $_SESSION['form'][$key] : "";
+    }
+
+    ### Erros ###
+
+    public static function clearError(){
+        unset($_SESSION['error']);
+    }
+
+    public static function saveError($erros){
+        $_SESSION['error'] = $erros;
+    }
+
+    public static function returnError(){
+       return (isset($_SESSION['error'])) ? $_SESSION['error'] : false;
     }
 }

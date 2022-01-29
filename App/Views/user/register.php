@@ -1,3 +1,9 @@
+<?php
+     // Oculta o Warning provisóriamente
+     ini_set('display_errors', 0 );
+     error_reporting(0);
+?>
+
 <div class="container">
      <center>
           <!-- ### Título da página ### -->
@@ -19,13 +25,13 @@
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> Nome do usuário </label>
-                         <input type="text" class="form-control" name="nameUser" value="<?php echo $Session::returnValueForm('nameUser'); ?>" required >
+                         <input type="text" class="form-control" name="nameUser" value="<?php echo $Session::returnValueForm('nameUser'); ?>" required>
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> E-mail do usuário </label>
-                         <input type="email" class="form-control" name="emailUser" value="<?php echo $Session::returnValueForm('emailUser'); ?>" required >
+                         <input type="email" class="form-control" name="emailUser" value="<?php echo $Session::returnValueForm('emailUser'); ?>" required>
                     </div>
                </div>
                <div class="row">
