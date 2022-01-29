@@ -2,9 +2,10 @@
 
 	namespace App\Controllers;
 
-	//use App\Libs\Sessao;
+	use App\Libs\Session;
 	use App\Models\DAO\ProductDAO;
 	use App\Models\Entities\Product;
+	use App\Models\Validations\ProductValidation;
 
 	class ProductController extends Controller
 	{	
@@ -17,6 +18,10 @@
 		public function register()
 		{
 			$this->render('/product/register');
+
+			Session::clearForm();
+        	Session::clearMessage();
+        	Session::clearError();
 		}
 
 		// Renderização da página de sucesso de cadastro
@@ -45,6 +50,18 @@
 			echo "</pre>";
 			*/
 
+			Session::saveForm($_POST);
+
+			// Validação dos Campos do Formulário
+			$productValidation = new ProductValidation();
+	        $resultValidation = $productValidation->validate($product);
+
+	        if($resultValidation->getErros()){
+	            Session::saveError($resultValidation->getErros());
+	            $this->redirect('/product/register');
+	        }
+
+	        // Registro no Banco de Dados
 			$productDAO = new ProductDAO();
 			
 			if($productDAO->save($product))

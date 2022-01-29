@@ -32,7 +32,7 @@
                </div>
                <div class="form-group">
                    <label> Descrição do produto </label>
-                   <textarea class="form-control" name="descriptionProduct" rows="2"></textarea>
+                   <textarea class="form-control" name="descriptionProduct" rows="2" required><?php echo $Session::returnValueForm('descriptionProduct'); ?></textarea>
                </div>
                <div class="row">
                     <div class="col-sm-12 col-md-3 col-lg-3 form-group">
