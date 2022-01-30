@@ -5,9 +5,15 @@
 	use App\Libs\Session;
 	use App\Models\DAO\UserDAO;
 	use App\Models\Entities\User;
+	use App\Models\Validations\UserValidation;
 
 	class UserController extends Controller
 	{	
+		public function index()
+		{
+			$this->redirect('/user/register');
+		}
+
 		// Método que renderiza a página de cadastro de novo usuário
 		public function register()
 		{
@@ -15,6 +21,7 @@
 
 			Session::clearForm();
         	Session::clearMessage();
+        	Session::clearError();
 		}
 
 		// Método que salva um novo cadastro de usuário
@@ -35,6 +42,15 @@
 			*/
 
 			Session::saveForm($_POST);
+
+			// Validação dos Campos do Formulário
+			$userValidation = new UserValidation();
+	        $resultValidation = $userValidation->validate($user);
+
+	        if($resultValidation->getErros()){
+	            Session::saveError($resultValidation->getErros());
+	            $this->redirect('/user/register');
+	        }
 			
 			$userDAO = new UserDAO();
 
@@ -62,9 +78,4 @@
 	            $this->redirect('/');
 	        }
 	    }
-
-		public function index()
-		{
-			$this->redirect('/user/register');
-		}
 	}

@@ -8,6 +8,7 @@
           </div>     
      </center>
 
+     <!-- ### Retorno de Erro ### --> 
      <?php if($Session::returnError()) { ?>
           <div class="alert alert-warning" role="alert">
                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

@@ -14,7 +14,17 @@
           </div>     
      </center>
 
-     <!-- ###  ### -->     
+     <!-- ### Retorno de Erro ### -->  
+     <?php if($Session::returnError()) { ?>
+          <div class="alert alert-warning" role="alert">
+               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+               <?php foreach($Session::returnError() as $key => $message){ ?>
+                    <?php echo $message; ?> <br/>
+               <?php } ?>
+          </div>
+     <?php } ?>
+
+     <!-- ### Retorno de Mensagem ### -->     
      <?php if($Session::returnMessage()){ ?>
           <div class="alert alert-warning" role="alert"><?php echo $Session::returnMessage(); ?></div>
      <?php } ?>
