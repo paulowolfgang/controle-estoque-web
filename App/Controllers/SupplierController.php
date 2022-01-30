@@ -2,16 +2,26 @@
 
 	namespace App\Controllers;
 
-	//use App\Libs\Sessao;
+	use App\Libs\Session;
 	use App\Models\DAO\SupplierDAO;
 	use App\Models\Entities\Supplier;
+	use App\Models\Validations\SupplierValidation;
 
 	class SupplierController extends Controller
 	{	
+		public function index()
+		{
+			$this->redirect('/supplier/register');
+		}
+
 		// Método que renderiza a página de cadastro de novo usuário
 		public function register()
 		{
 			$this->render('/supplier/register');
+
+			Session::clearForm();
+        	Session::clearMessage();
+        	Session::clearError();
 		}
 
 		// Método que salva um novo cadastro de usuário
@@ -34,6 +44,17 @@
 				echo var_dump($supplier);
 			echo "</pre>";
 			*/
+
+			Session::saveForm($_POST);
+
+			// Validação dos Campos do Formulário
+			$supplierValidation = new SupplierValidation();
+	        $resultValidation = $supplierValidation->validate($supplier);
+
+	        if($resultValidation->getErros()){
+	            Session::saveError($resultValidation->getErros());
+	            $this->redirect('/supplier/register');
+	        }
 			
 			$supplierDAO = new SupplierDAO();
 			
@@ -44,14 +65,9 @@
 				//Lógica de tratamento de erro (Sessão)
 			}
 		}
-		
+
 		public function success()
 	    {
 	        $this->render('/supplier/success');
 	    }
-
-		public function index()
-		{
-			$this->redirect('/supplier/register');
-		}
 	}

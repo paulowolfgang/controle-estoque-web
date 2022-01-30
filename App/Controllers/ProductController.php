@@ -24,12 +24,6 @@
         	Session::clearError();
 		}
 
-		// Renderização da página de sucesso de cadastro
-		public function success()
-	    {
-	        $this->render('/product/success');
-	    }
-
 		// Método que salva um novo cadastro de usuário
 		public function save()
 		{
@@ -71,4 +65,10 @@
 				//Lógica de tratamento de erro (Sessão)
 			}
 		}
+
+		// Renderização da página de sucesso de cadastro
+		public function success()
+	    {
+	        $this->render('/product/success');
+	    }
 	}
