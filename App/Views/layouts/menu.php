@@ -16,6 +16,7 @@
             Usuário
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/user/">Lista</a>
             <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/user/register">Cadastro</a>
           </div>
         </li>
@@ -24,6 +25,7 @@
             Fornecedor
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/supplier/">Lista</a>
             <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/supplier/register">Cadastro</a>
           </div>
         </li>
@@ -32,7 +34,8 @@
             Produto
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/product/register">Produto</a>
+            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/product/">Lista</a>
+            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/product/register">Cadastro</a>
           </div>
         </li>
         <li class="nav-item">
