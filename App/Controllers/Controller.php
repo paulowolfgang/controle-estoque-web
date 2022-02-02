@@ -13,6 +13,7 @@
 		public function __construct($app)
 		{
 			$this->setViewParam('nameController', $app->getControllerName());
+			$this->setViewParam('nameAction',$app->getAction());
 		}
 
 		// Função que monta o layout da aplicação

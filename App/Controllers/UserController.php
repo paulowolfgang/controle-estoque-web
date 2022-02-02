@@ -11,7 +11,7 @@
 	{	
 		public function index()
 		{
-			$this->redirect('/user/register');
+			$this->redirect('/user/index');
 		}
 
 		// Método que renderiza a página de cadastro de novo usuário

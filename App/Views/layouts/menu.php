@@ -34,7 +34,7 @@
             Produto
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/product/">Lista</a>
+            <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/product">Lista</a>
             <a class="dropdown-item" href="http://<?php echo APP_HOST; ?>/product/register">Cadastro</a>
           </div>
         </li>

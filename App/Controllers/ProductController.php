@@ -11,7 +11,13 @@
 	{	
 		public function index()
 		{
-			$this->redirect('/product/register');
+			$productDAO = new ProductDAO();
+
+        	self::setViewParam('listProducts', $productDAO->list());
+
+			$this->render('/product/index');
+
+			Session::clearMessage();
 		}
 
 		// Renderização da página de cadastro de novo usuário

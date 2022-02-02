@@ -7,7 +7,7 @@
 
 	class App
 	{
-		public $controllerName;
+		public  $controllerName;
 		private $controller; 
 		private $controllerFile;
 		private $params;
@@ -55,6 +55,7 @@
 			}
 
 			$className        = "\\App\\Controllers\\" . $this->controllerName;
+			
 			$objectController = new $className($this);
 
 			if (!class_exists($className))
