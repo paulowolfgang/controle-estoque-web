@@ -13,7 +13,7 @@
 		{
 			$productDAO = new ProductDAO();
 
-        	self::setViewParam('listProducts', $productDAO->list());
+        	self::setViewParam('listProducts', $productDAO->index());
 
 			$this->render('/product/index');
 
@@ -78,3 +78,11 @@
 	        $this->render('/product/success');
 	    }
 	}
+
+	
+	for($i = 0; $i < 10; $i++)
+	{
+		$a = 0;
+		$a += $i;
+	}
+	

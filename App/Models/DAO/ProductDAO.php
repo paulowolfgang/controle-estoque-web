@@ -6,17 +6,18 @@ use App\Models\Entities\Product;
 
 class ProductDAO extends BaseDAO
 {   
-    public function list($idProduct = null)
+    public function index($idProduct = null)
     {
-        if($idProduct) {
+        if($idProduct)
+        {
 
             $result = $this->select(
-                "SELECT * FROM produto WHERE id_produto = $idProduct"
+                "SELECT referencia_produto, nome_produto, quantidade_produto FROM produto WHERE id_produto = $idProduct"
             );
 
             return $result->fetchObject(Product::class);
 
-        }else{
+        } else {
 
             $result = $this->select(
                 'SELECT * FROM produto'

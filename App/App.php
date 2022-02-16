@@ -33,7 +33,7 @@
 		public function run()
 		{
 			if ($this->controller)
-			{
+			{	
 				$this->controllerName = ucwords($this->controller) . 'Controller';
 				$this->controllerName = preg_replace('/[^a-zA-Z]/i', '', $this->controllerName);
 			} else {
@@ -41,8 +41,8 @@
 			}
 
 			$this->controllerFile = $this->controllerName . '.php';
-			$this->action         = preg_replace('/[^a-zA-Z]/i','',$this->action);
-
+			$this->action         = preg_replace('/[^a-zA-Z]/i', '', $this->action ? $this->action : ''); // Ajuste no 3° argumento
+ 
 			if (!$this->controller)
 			{
 				$this->controller = new HomeController($this);

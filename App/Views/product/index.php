@@ -1,31 +1,35 @@
 <?php
      // Oculta o Warning provisóriamente
-     //ini_set('display_errors', 0 );
-     //error_reporting(0);
+     ini_set('display_errors', 0 );
+     error_reporting(0);
 ?>
 
-<div class="container">
+<div class="container mb-5">
     <div class="row">
         
-        <div class="col-md-12 mt-5">
+        <div class="col-md-12 mt-5 mb-3">
             <a href="http://<?php echo APP_HOST; ?>/product/register" class="btn btn-success btn-sm">Adicionar Novo</a>
         </div>
         <div class="col-md-12">
             <?php if($Session::returnMessage()){ ?>
                 <div class="alert alert-warning" role="alert">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <?php echo $Sessao::returnMessage(); ?>
+                    <?php echo $Session::returnMessage(); ?>
                 </div>
             <?php } ?>
 
             <?php
                 if(!count($viewVar['listProducts'])){
+                /*
+                echo "<pre>";
+                    echo var_dump($viewVar['listProducts']);
+                echo "</pre>";
+                */
             ?>
                 <div class="alert alert-info" role="alert">Não há produtos cadastrados!</div>
             <?php
                 } else {
             ?>
-                
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                         <tr>
@@ -37,14 +41,19 @@
 
                         <?php
                             foreach($viewVar['listProducts'] as $product) {
+                                //echo "<pre>";
+                                    //echo var_dump($product->getRefProduct());
+                                //echo "</pre>";
                         ?>
                             <tr>
                                 <td><?php echo $product->getRefProduct(); ?></td>
-                                <td>R$ <?php echo $produto->getNameProduct(); ?></td>
-                                <td><?php echo $produto->getStockProduct(); ?></td>
+                                <td><?php echo $product->getNameProduct(); ?></td>
+                                <td><?php echo $product->getStockProduct(); ?></td>
                                 <td>
-                                    <a href="http://<?php echo APP_HOST; ?>/product/edit/<?php echo $product->getIdProduct(); ?>" class="btn btn-info btn-sm">Editar</a>
-                                    <a href="http://<?php echo APP_HOST; ?>/product/delet/<?php echo $product->getIdProduct(); ?>" class="btn btn-danger btn-sm">Remover</a>
+                                    <center>
+                                        <a href="http://<?php echo APP_HOST; ?>/product/edit/<?php echo $product->getIdProduct(); ?>" class="btn btn-info btn-sm">Editar</a>
+                                        <a href="http://<?php echo APP_HOST; ?>/product/delet/<?php echo $product->getIdProduct(); ?>" class="btn btn-danger btn-sm">Remover</a>
+                                    </center>
                                 </td>
                             </tr>
                         <?php
