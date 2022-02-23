@@ -24,33 +24,33 @@
                <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> Referência do produto </label>
-                         <input type="text" class="form-control" name="refProduct" value="<?php echo $Session::returnValueForm('refProduct'); ?>" required>
+                         <input type="text" class="form-control" name="ref_product" value="<?php echo $Session::returnValueForm('refProduct'); ?>" required>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-8 form-group">
                          <label> Nome do produto </label>
-                         <input type="text" class="form-control" name="nameProduct" value="<?php echo $Session::returnValueForm('nameProduct'); ?>" required>
+                         <input type="text" class="form-control" name="name_product" value="<?php echo $Session::returnValueForm('nameProduct'); ?>" required>
                     </div>
                </div>
                <div class="form-group">
                    <label> Descrição do produto </label>
-                   <textarea class="form-control" name="descriptionProduct" rows="2" required><?php echo $Session::returnValueForm('descriptionProduct'); ?></textarea>
+                   <textarea class="form-control" name="description_product" rows="2" required><?php echo $Session::returnValueForm('descriptionProduct'); ?></textarea>
                </div>
                <div class="row">
                     <div class="col-sm-12 col-md-3 col-lg-3 form-group">
                          <label> Valor de custo do produto </label>
-                         <input type="text" class="form-control" name="costPriceProduct" value="<?php echo $Session::returnValueForm('costPriceProduct'); ?>" required>
+                         <input type="text" class="form-control" name="cost_price_product" value="<?php echo $Session::returnValueForm('costPriceProduct'); ?>" required>
                     </div>
                     <div class="col-sm-12 col-md-3 col-lg-3 form-group">
                          <label> Valor de venda do produto </label>
-                         <input type="text" class="form-control" name="salePriceProduct" value="<?php echo $Session::returnValueForm('salePriceProduct'); ?>" required>
+                         <input type="text" class="form-control" name="sale_price_product" value="<?php echo $Session::returnValueForm('salePriceProduct'); ?>" required>
                     </div>
                     <div class="col-sm-12 col-md-3 col-lg-3 form-group">
                          <label> Quantidade em estoque </label>
-                         <input type="text" class="form-control" name="stockProduct" value="<?php echo $Session::returnValueForm('stockProduct'); ?>" required>
+                         <input type="text" class="form-control" name="stock_product" value="<?php echo $Session::returnValueForm('stockProduct'); ?>" required>
                     </div>
                     <div class="col-sm-12 col-md-3 col-lg-3 form-group">
                          <label> Categoria </label>
-                         <select class="form-control" name="categoryProduct">
+                         <select class="form-control" name="category_product">
                               <option>Açougue</option>
                               <option>Farmácia</option>
                               <option>Eletrônicos</option>

@@ -13,7 +13,7 @@
 		{
 			$productDAO = new ProductDAO();
 
-        	self::setViewParam('listProducts', $productDAO->index());
+        	self::setViewParam('listProducts', $productDAO->list());
 
 			$this->render('/product/index');
 
@@ -36,13 +36,13 @@
 			// Implementação do método de salvar
 			$product = new Product();
 			
-			$product->setRefProduct($_POST['refProduct']);
-			$product->setNameProduct($_POST['nameProduct']);
-			$product->setDescriptionProduct($_POST['descriptionProduct']);
-			$product->setCostPriceProduct($_POST['costPriceProduct']);
-			$product->setSalePriceProduct($_POST['salePriceProduct']);
-			$product->setStockProduct($_POST['stockProduct']);
-			$product->setCategoryProduct($_POST['categoryProduct']);
+			$product->setRefProduct($_POST['ref_product']);
+			$product->setNameProduct($_POST['name_product']);
+			$product->setDescriptionProduct($_POST['description_product']);
+			$product->setCostPriceProduct($_POST['cost_price_product']);
+			$product->setSalePriceProduct($_POST['sale_price_product']);
+			$product->setStockProduct($_POST['stock_product']);
+			$product->setCategoryProduct($_POST['category_product']);
 			
 			/*
 			echo "<pre>";
@@ -77,12 +77,5 @@
 	    {
 	        $this->render('/product/success');
 	    }
-	}
-
-	
-	for($i = 0; $i < 10; $i++)
-	{
-		$a = 0;
-		$a += $i;
 	}
 	

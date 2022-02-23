@@ -6,13 +6,12 @@ use App\Models\Entities\Product;
 
 class ProductDAO extends BaseDAO
 {   
-    public function index($idProduct = null)
+    public function list($id_product = null)
     {
-        if($idProduct)
+        if($id_product)
         {
-
             $result = $this->select(
-                "SELECT referencia_produto, nome_produto, quantidade_produto FROM produto WHERE id_produto = $idProduct"
+                "SELECT ref_product, name_product, stock_product FROM product WHERE id_product = $id_product"
             );
 
             return $result->fetchObject(Product::class);
@@ -20,7 +19,7 @@ class ProductDAO extends BaseDAO
         } else {
 
             $result = $this->select(
-                'SELECT * FROM produto'
+                "SELECT * FROM produto"
             );
 
             return $result->fetchAll(\PDO::FETCH_CLASS, Product::class);
@@ -33,25 +32,25 @@ class ProductDAO extends BaseDAO
     public  function save(Product $product) {
         try {
 
-            $refProduct         = $product->getRefProduct();
-            $nameProduct        = $product->getNameProduct();
-            $descriptionProduct = $product->getDescriptionProduct();
-            $costPriceProduct   = $product->getCostPriceProduct();
-            $salePriceProduct   = $product->getSalePriceProduct();
-            $stockProduct       = $product->getStockProduct();
-            $categoryProduct    = $product->getCategoryProduct();
+            $ref_product          = $product->getRefProduct();
+            $name_product         = $product->getNameProduct();
+            $description_product  = $product->getDescriptionProduct();
+            $cost_price_product   = $product->getCostPriceProduct();
+            $sale_price_product   = $product->getSalePriceProduct();
+            $stock_product        = $product->getStockProduct();
+            $category_product     = $product->getCategoryProduct();
 
             return $this->insert(
                 'produto', // Nome da tabela do banco
-                ":referencia_produto,:nome_produto,:descricao_produto,:custo_produto,:preco_produto,:quantidade_produto,:categoria_produto", // Colunas a serem populadas
+                ":ref_product,:name_product,:description_product,:cost_price_product,:sale_price_product,:stock_product,:category_product", // Colunas a serem populadas
                 [
-                    ':referencia_produto' =>$refProduct,
-                    ':nome_produto'       =>$nameProduct,
-                    ':descricao_produto'  =>$descriptionProduct,
-                    ':custo_produto'      =>$costPriceProduct,
-                    ':preco_produto'      =>$salePriceProduct,
-                    ':quantidade_produto' =>$stockProduct,
-                    ':categoria_produto'  =>$categoryProduct
+                    ':ref_product'         =>$ref_product,
+                    ':name_product'        =>$name_product,
+                    ':description_product' =>$description_product,
+                    ':cost_price_product'  =>$cost_price_product,
+                    ':sale_price_product'  =>$sale_price_product,
+                    ':stock_product'       =>$stock_product,
+                    ':category_product'    =>$category_product
                 ]
             );
 

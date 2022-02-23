@@ -20,12 +20,12 @@
 
             try
             { 
-                if(!isset($connection))
+                if(!isset(self::$connection))
                 {
-                    $connection = new PDO($pdoConfig, DB_USER, DB_PASSWORD);
-                    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    self::$connection = new PDO($pdoConfig, DB_USER, DB_PASSWORD);
+                    self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 }
-                return $connection;
+                return self::$connection;
             } catch(PDOException $e){
                 throw new Exception("Erro ao conectar com o banco de dados!", 500);
             }

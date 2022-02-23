@@ -1,103 +1,103 @@
 <?php
 	
 	namespace App\Models\Entities;
-
+	
 	class Product
 	{
-		private $idProduct;
-		private $refProduct;
-		private $nameProduct;
-		private $descriptionProduct;
-		private $costPriceProduct;
-		private $salePriceProduct;
-		private $stockProduct;
-		private $categoryProduct;
+		private $id_product;
+		private $ref_product;
+		private $name_product;
+		private $description_product;
+		private $cost_price_product;
+		private $sale_price_product;
+		private $stock_product;
+		private $category_product;
 
 		### ID Product ###
 		public function getIdProduct()
 		{
-			return $this->idProduct;
+			return $this->id_product;
 		}
 
-		public function setIdProduct($idProduct)
+		public function setIdProduct($id_product)
 		{
-			$this->idProduct = $idProduct;
+			$this->id_product = $id_product;
 		}
 
 		### References Product ###
 		public function getRefProduct()
 		{
-			return $this->refProduct;
+			return $this->ref_product;
 		}
 
-		public function setRefProduct($refProduct)
+		public function setRefProduct($ref_product)
 		{
-			$this->refProduct = $refProduct;
+			$this->ref_product = $ref_product;
 		}
 
 		### Name Product ###
 		public function getNameProduct()
 		{
-			return $this->nameProduct;
+			return $this->name_product;
 		}
 
-		public function setNameProduct($nameProduct)
+		public function setNameProduct($name_product)
 		{
-			$this->nameProduct = $nameProduct;
+			$this->name_product = $name_product;
 		}
 
 		### Description Product ###
 		public function getDescriptionProduct()
 		{
-			return $this->descriptionProduct;
+			return $this->description_product;
 		}
 
-		public function setDescriptionProduct($descriptionProduct)
+		public function setDescriptionProduct($description_product)
 		{
-			$this->descriptionProduct = $descriptionProduct;
+			$this->description_product = $description_product;
 		}
 
 		### Cost Price Product ###
 		public function getCostPriceProduct()
 		{
-			return $this->costPriceProduct;
+			return $this->cost_price_product;
 		}
 
-		public function setCostPriceProduct($costPriceProduct)
+		public function setCostPriceProduct($cost_price_product)
 		{
-			$this->costPriceProduct = $costPriceProduct;
+			$this->cost_price_product = $cost_price_product;
 		}
 
 		### Sale Price Product ###
 		public function getSalePriceProduct()
 		{
-			return $this->salePriceProduct;
+			return $this->sale_price_product;
 		}
 
-		public function setSalePriceProduct($salePriceProduct)
+		public function setSalePriceProduct($sale_price_product)
 		{
-			$this->salePriceProduct = $salePriceProduct;
+			$this->sale_price_product = $sale_price_product;
 		}
 
 		### Stock Product ###
 		public function getStockProduct()
 		{
-			return $this->stockProduct;
+			return $this->stock_product;
 		}
 
-		public function setStockProduct($stockProduct)
+		public function setStockProduct($stock_product)
 		{
-			$this->stockProduct = $stockProduct;
+			$this->stock_product = $stock_product;
 		}
 
 		### Category Product ###
 		public function getCategoryProduct()
 		{
-			return $this->categoryProduct;
+			return $this->category_product;
 		}
 
-		public function setCategoryProduct($categoryProduct)
+		public function setCategoryProduct($category_product)
 		{
-			$this->categoryProduct = $categoryProduct;
+			$this->category_product = $category_product;
 		}
 	}

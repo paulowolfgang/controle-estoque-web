@@ -6,7 +6,6 @@ use App\Models\Entities\Supplier;
 
 class SupplierDAO extends BaseDAO
 {
-
     public  function save(Supplier $supplier) {
         try {
 

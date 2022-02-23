@@ -6,12 +6,12 @@
 	use Exception;
 
 	class App
-	{
-		public  $controllerName;
+	{	
 		private $controller; 
 		private $controllerFile;
-		private $params;
 		private $action;
+		private $params;
+		public  $controllerName;
 
 		public function __construct()
 		{
@@ -22,9 +22,9 @@
         	define('PATH'        , realpath('./'));
         	define('TITLE'       , "Sistema de Controle de Estoque");
         	define('DB_HOST'     , "localhost");
-        	define('DB_NAME'     , "db_estoque_app");
         	define('DB_USER'     , "root");
         	define('DB_PASSWORD' , "");
+			define('DB_NAME'     , "db_estoque_app");
         	define('DB_DRIVER'   , "mysql");
 
         	$this->url();
@@ -87,10 +87,10 @@
 
 	            $path = explode('/', $path);
 
-	            $this->controller  = $this->verificaArray($path, 0); //Posição do controller
-	            $this->action      = $this->verificaArray($path, 1); //Posição da ação
+	            $this->controller  = $this->checkArray($path, 0); //Posição do controller
+	            $this->action      = $this->checkArray($path, 1); //Posição da ação
 
-	            if ($this->verificaArray($path, 2)) //Posição dos parâmetros
+	            if ($this->checkArray($path, 2)) //Posição dos parâmetros
 	            {
 	                unset($path[0]);
 	                unset($path[1]);
@@ -113,13 +113,13 @@
 	    {
 	        return $this->controllerName;
 	    }
-
+		/*
 	    public function getParams()
 	    {
 	        return $this->params;
 	    }
-
-	    private function verificaArray ($array, $key)
+		*/
+	    private function checkArray ($array, $key)
 	    {
 	        if (isset($array[$key]) && !empty($array[$key]))
 	        {

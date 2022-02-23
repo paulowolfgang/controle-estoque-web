@@ -1,9 +1,3 @@
-<?php
-     // Oculta o Warning provisóriamente
-     ini_set('display_errors', 0 );
-     error_reporting(0);
-?>
-
 <div class="container mb-5">
     <div class="row">
         
@@ -33,17 +27,20 @@
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                         <tr>
-                            <td class="info">Refrência</td>
+                            <td class="info">Referência</td>
                             <td class="info">Nome</td>
                             <td class="info">Quantidade</td>
                             <td class="info"></td>
                         </tr>
 
                         <?php
-                            foreach($viewVar['listProducts'] as $product) {
-                                //echo "<pre>";
-                                    //echo var_dump($product->getRefProduct());
-                                //echo "</pre>";
+                            foreach($viewVar['listProducts'] as $product)
+                            {
+                                /*
+                                echo "<pre>";
+                                    echo var_dump($viewVar['listProducts']);
+                                echo "</pre>";
+                                */
                         ?>
                             <tr>
                                 <td><?php echo $product->getRefProduct(); ?></td>
