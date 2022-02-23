@@ -19,7 +19,7 @@ class ProductDAO extends BaseDAO
         } else {
 
             $result = $this->select(
-                "SELECT * FROM produto"
+                "SELECT * FROM product"
             );
 
             return $result->fetchAll(\PDO::FETCH_CLASS, Product::class);
@@ -41,7 +41,7 @@ class ProductDAO extends BaseDAO
             $category_product     = $product->getCategoryProduct();
 
             return $this->insert(
-                'produto', // Nome da tabela do banco
+                'product', // Nome da tabela do banco
                 ":ref_product,:name_product,:description_product,:cost_price_product,:sale_price_product,:stock_product,:category_product", // Colunas a serem populadas
                 [
                     ':ref_product'         =>$ref_product,
