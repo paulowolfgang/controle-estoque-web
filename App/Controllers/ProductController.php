@@ -20,7 +20,7 @@
 			Session::clearMessage();
 		}
 
-		// Renderização da página de cadastro de novo usuário
+		// Renderização da página de cadastro de novo produto
 		public function register()
 		{
 			$this->render('/product/register');
@@ -30,7 +30,7 @@
         	Session::clearError();
 		}
 
-		// Método que salva um novo cadastro de usuário
+		// Método que salva um novo cadastro de produto
 		public function save()
 		{
 			// Implementação do método de salvar

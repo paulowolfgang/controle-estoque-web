@@ -4,112 +4,112 @@
 
 	class Supplier
 	{
-		private $idSupplier;
-		private $nameSupplier;
-		private $socialSupplier;
-		private $adressSupplier;
-		private $citySupplier;
-		private $stateSupplier;
-		private $cnpjSupplier;
-		private $emailSupplier;
-		private $phoneSupplier;
+		private $id_supplier;
+		private $name_supplier;
+		private $social_supplier;
+		private $adress_supplier;
+		private $city_supplier;
+		private $state_supplier;
+		private $cnpj_supplier;
+		private $email_supplier;
+		private $phone_supplier;
 
 		### ID Supplier ###
 		public function getIdSupplier()
 		{
-			return $this->idSupplier;
+			return $this->id_supplier;
 		}
 
-		public function setIdSupplier($idSupplier)
+		public function setIdSupplier($id_supplier)
 		{
-			$this->$idSupplier = $idSupplier;
+			$this->$id_supplier = $id_supplier;
 		}
 
 		### Name Supplier ###
 		public function getNameSupplier()
 		{
-			return $this->nameSupplier;
+			return $this->name_supplier;
 		}
 
-		public function setNameSupplier($nameSupplier)
+		public function setNameSupplier($name_supplier)
 		{
-			$this->nameSupplier = $nameSupplier;
+			$this->name_supplier = $name_supplier;
 		}
 
 		### Social Supplier ###
 		public function getSocialSupplier()
 		{
-			return $this->socialSupplier;
+			return $this->social_supplier;
 		}
 
-		public function setSocialSupplier($socialSupplier)
+		public function setSocialSupplier($social_supplier)
 		{
-			$this->socialSupplier = $socialSupplier;
+			$this->social_supplier = $social_supplier;
 		}
 
 		### Adress Supplier ###
 		public function getAdressSupplier()
 		{
-			return $this->adressSupplier;
+			return $this->adress_supplier;
 		}
 
-		public function setAdressSupplier($adressSupplier)
+		public function setAdressSupplier($adress_supplier)
 		{
-			$this->adressSupplier = $adressSupplier;
+			$this->adress_supplier = $adress_supplier;
 		}
 
 		### City Supplier ###
 		public function getCitySupplier()
 		{
-			return $this->citySupplier;
+			return $this->city_supplier;
 		}
 
-		public function setCitySupplier($citySupplier)
+		public function setCitySupplier($city_supplier)
 		{
-			$this->citySupplier = $citySupplier;
+			$this->city_supplier = $city_supplier;
 		}
 
 		### State Supplier ###
 		public function getStateSupplier()
 		{
-			return $this->stateSupplier;
+			return $this->state_supplier;
 		}
 
-		public function setStateSupplier($stateSupplier)
+		public function setStateSupplier($state_supplier)
 		{
-			$this->stateSupplier = $stateSupplier;
+			$this->state_supplier = $state_supplier;
 		}
 
 		### CNPJ Supplier ###
 		public function getCnpjSupplier()
 		{
-			return $this->cnpjSupplier;
+			return $this->cnpj_supplier;
 		}
 
-		public function setCnpjSupplier($cnpjSupplier)
+		public function setCnpjSupplier($cnpj_supplier)
 		{
-			$this->cnpjSupplier = $cnpjSupplier;
+			$this->cnpj_supplier = $cnpj_supplier;
 		}
 
 		### E-mail Supplier ###
 		public function getEmailSupplier()
 		{
-			return $this->emailSupplier;
+			return $this->email_supplier;
 		}
 
-		public function setEmailSupplier($emailSupplier)
+		public function setEmailSupplier($email_supplier)
 		{
-			$this->emailSupplier = $emailSupplier;
+			$this->email_supplier = $email_supplier;
 		}
 
 		### Phone Supplier ###
 		public function getPhoneSupplier()
 		{
-			return $this->phoneSupplier;
+			return $this->phone_supplier;
 		}
 
-		public function setPhoneSupplier($phoneSupplier)
+		public function setPhoneSupplier($phone_supplier)
 		{
-			$this->phoneSupplier = $phoneSupplier;
+			$this->phone_supplier = $phone_supplier;
 		}
 	}

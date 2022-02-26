@@ -3,18 +3,24 @@
 	namespace App\Controllers;
 
 	use App\Libs\Session;
-	use App\Models\DAO\SupplierDAO;
 	use App\Models\Entities\Supplier;
+	use App\Models\DAO\SupplierDAO;
 	use App\Models\Validations\SupplierValidation;
 
 	class SupplierController extends Controller
 	{	
 		public function index()
 		{
-			$this->redirect('/supplier/register');
+			$supplierDAO = new SupplierDAO();
+
+        	self::setViewParam('listSuppliers', $supplierDAO->list());
+
+			$this->render('/supplier/index');
+
+			Session::clearMessage();
 		}
 
-		// Método que renderiza a página de cadastro de novo usuário
+		// Método que renderiza a página de cadastro de novo fornecedor
 		public function register()
 		{
 			$this->render('/supplier/register');
@@ -24,7 +30,7 @@
         	Session::clearError();
 		}
 
-		// Método que salva um novo cadastro de usuário
+		// Método que salva um novo cadastro de fornecedor
 		public function save()
 		{
 			// Implementação do método de salvar
