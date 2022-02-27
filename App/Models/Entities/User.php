@@ -4,76 +4,76 @@
 
 	class User
 	{
-		private $idUser;
-		private $nameUser;
-		private $emailUser;
-		private $passUser;
-		private $typeUser;
-		private $statusUser;
+		private $id_user;
+		private $name_user;
+		private $email_user;
+		private $pass_user;
+		private $type_user;
+		private $status_user;
 
 		### ID User ###
 		public function getIdUser()
 		{
-			return $this->idUser;
+			return $this->id_user;
 		}
 
-		public function setIdUser($idUser)
+		public function setIdUser($id_user)
 		{
-			$this->idUser = $idUser;
+			$this->id_user = $id_user;
 		}
 
 		### Name User ###
 		public function getNameUser()
 		{
-			return $this->nameUser;
+			return $this->name_user;
 		}
 
-		public function setNameUser($nameUser)
+		public function setNameUser($name_user)
 		{
-			$this->nameUser = $nameUser;
+			$this->name_user = $name_user;
 		}
 
 		### E-mail User ###
 		public function getEmailUser()
 		{
-			return $this->emailUser;
+			return $this->email_user;
 		}
 
-		public function setEmailUser($emailUser)
+		public function setEmailUser($email_user)
 		{
-			$this->emailUser = $emailUser;
+			$this->email_user = $email_user;
 		}
 
 		### Password User ###
 		public function getPassUser()
 		{
-			return $this->passUser;
+			return $this->pass_user;
 		}
 
-		public function setPassUser($passUser)
+		public function setPassUser($pass_user)
 		{
-			$this->passUser = $passUser;
+			$this->pass_user = $pass_user;
 		}
 
 		### Type User ###
 		public function getTypeUser()
 		{
-			return $this->typeUser;
+			return $this->type_user;
 		}
 
-		public function setTypeUser($typeUser)
+		public function setTypeUser($type_user)
 		{
-			$this->typeUser = $typeUser;
+			$this->type_user = $type_user;
 		}
 
 		### Status User ###
 		public function getStatusUser()
 		{
-			return $this->statusUser;
+			return $this->status_user;
 		}
 
-		public function setStatusUser($statusUser)
+		public function setStatusUser($status_user)
 		{
-			$this->statusUser = $statusUser;
+			$this->status_user = $status_user;
 		}
 	}

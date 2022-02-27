@@ -35,32 +35,32 @@
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> Nome do usuário </label>
-                         <input type="text" class="form-control" name="nameUser" value="<?php echo $Session::returnValueForm('nameUser'); ?>" required>
+                         <input type="text" class="form-control" name="name_user" value="<?php echo $Session::returnValueForm('name_user'); ?>" required>
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> E-mail do usuário </label>
-                         <input type="email" class="form-control" name="emailUser" value="<?php echo $Session::returnValueForm('emailUser'); ?>" required>
+                         <input type="email" class="form-control" name="email_user" value="<?php echo $Session::returnValueForm('email_user'); ?>" required>
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> Senha do usuário </label>
-                         <input type="password" class="form-control" name="passUser" required>
+                         <input type="password" class="form-control" name="pass_user" required>
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> Tipo do usuário </label>
-                         <select class="form-control" name="typeUser">
+                         <select class="form-control" name="type_user">
                               <option> Administrador </option>
                               <option> Conferente </option>
                          </select>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> Status do usuário </label>
-                         <select class="form-control" name="statusUser">
+                         <select class="form-control" name="status_user">
                               <option>Ativado</option>
                               <option>Desativado</option>
                         </select>

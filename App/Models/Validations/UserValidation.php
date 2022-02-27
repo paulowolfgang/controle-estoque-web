@@ -13,17 +13,17 @@ class UserValidation{
 
         if(empty($user->getNameUser()))
         {
-            $resultValidation->addError('nameUser',"Nome: Este campo não pode ser vazio.");
+            $resultValidation->addError('name_user',"Nome: Este campo não pode ser vazio.");
         }
         
         if(empty($user->getEmailUser()))
         {
-            $resultValidation->addError('emailUser',"E-mail: Este campo não pode ser vazio.");
+            $resultValidation->addError('email_user',"E-mail: Este campo não pode ser vazio.");
         }
 
         if(empty($user->getPassUser()))
         {
-            $resultValidation->addError('passUser',"Senha: Este campo não pode ser vazio.");
+            $resultValidation->addError('pass_user',"Senha: Este campo não pode ser vazio.");
         }
 
         return $resultValidation;

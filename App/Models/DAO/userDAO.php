@@ -6,12 +6,35 @@ use App\Models\Entities\User;
 
 class UserDAO extends BaseDAO
 {
+    public function list($id_user = null)
+    {
+        if($id_user)
+        {
+            $result = $this->select(
+                "SELECT * FROM user WHERE id_user = $id_user"
+            );
+
+            return $result->fetchObject(User::class);
+
+        } else {
+
+            $result = $this->select(
+                "SELECT * FROM user"
+            );
+
+            return $result->fetchAll(\PDO::FETCH_CLASS, User::class);
+            
+        }
+
+        return false;
+    }
+
     public function checksEmail($email)
     {
         try {
 
             $query = $this->select(
-                "SELECT email_usuario FROM usuario WHERE email_usuario = '$email'"
+                "SELECT email_user FROM user WHERE email_user = '$email'"
             );
 
             return $query->fetch();
@@ -25,21 +48,21 @@ class UserDAO extends BaseDAO
     {
         try {
 
-            $nameUser   = $user->getNameUser();
-            $emailUser  = $user->getEmailUser();
-            $passUser   = $user->getPassUser();
-            $typeUser   = $user->getTypeUser();
-            $statusUser = $user->getStatusUser();
+            $name_user   = $user->getNameUser();
+            $email_user  = $user->getEmailUser();
+            $pass_user   = $user->getPassUser();
+            $type_user   = $user->getTypeUser();
+            $status_user = $user->getStatusUser();
 
             return $this->insert(
-                'usuario', // Nome da tabela do banco
-                ":nome_usuario,:email_usuario,:senha_usuario,:tipo_usuario,:status_usuario", // Colunas a serem populadas
+                'user', // Nome da tabela do banco
+                ":name_user,:email_user,:pass_user,:type_user,:status_user", // Colunas a serem populadas
                 [
-                    ':nome_usuario'   =>$nameUser, // Valores a serem persitidos no banco de dados
-                    ':email_usuario'  =>$emailUser,
-                    ':senha_usuario'  =>$passUser,
-                    ':tipo_usuario'   =>$typeUser,
-                    ':status_usuario' =>$statusUser
+                    ':name_user'   =>$name_user, // Valores a serem persitidos no banco de dados
+                    ':email_user'  =>$email_user,
+                    ':pass_user'   =>$pass_user,
+                    ':type_user'   =>$type_user,
+                    ':status_user' =>$status_user
                 ]
             );
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Fev-2022 às 17:46
+-- Tempo de geração: 27-Fev-2022 às 22:43
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -85,19 +85,19 @@ INSERT INTO `supplier` (`id_supplier`, `name_supplier`, `social_supplier`, `cnpj
 --
 
 CREATE TABLE `user` (
-  `id_usuario` int(11) NOT NULL,
-  `nome_usuario` varchar(100) NOT NULL,
-  `email_usuario` varchar(50) NOT NULL,
-  `senha_usuario` varchar(32) NOT NULL,
-  `tipo_usuario` varchar(20) NOT NULL,
-  `status_usuario` varchar(20) NOT NULL
+  `id_user` int(11) NOT NULL,
+  `name_user` varchar(100) NOT NULL,
+  `email_user` varchar(50) NOT NULL,
+  `pass_user` varchar(32) NOT NULL,
+  `type_user` varchar(20) NOT NULL,
+  `status_user` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `user`
 --
 
-INSERT INTO `user` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `tipo_usuario`, `status_usuario`) VALUES
+INSERT INTO `user` (`id_user`, `name_user`, `email_user`, `pass_user`, `type_user`, `status_user`) VALUES
 (1, 'Paulo Victor', 'paulo@teste.com.br', '12345', 'Administrador', 'Ativado'),
 (2, 'João Carlos', 'joao@teste.com.br', '12345', 'Conferente', 'Ativado'),
 (3, 'Maria Silva', 'maria@teste.com.br', '12345', 'Conferente', 'Ativado'),
@@ -107,7 +107,8 @@ INSERT INTO `user` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuari
 (7, 'Samara Silva', 'samara@teste.com.br', '12345', 'Conferente', 'Ativado'),
 (8, 'Daiana Helena', 'daiana@teste.com.br', '123abc', 'Administrador', 'Ativado'),
 (9, 'Ana Rafaela', 'rafaela@teste.com.br', '12345', 'Conferente', 'Ativado'),
-(10, 'Ana Simone', 'anasimone@teste.com.br', '123456', 'Conferente', 'Ativado');
+(10, 'Ana Simone', 'anasimone@teste.com.br', '123456', 'Conferente', 'Ativado'),
+(11, 'Ana Maria', 'ana_maria@teste.com.br', '12345', 'Conferente', 'Ativado');
 
 --
 -- Índices para tabelas despejadas
@@ -129,7 +130,7 @@ ALTER TABLE `supplier`
 -- Índices para tabela `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -151,7 +152,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT de tabela `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

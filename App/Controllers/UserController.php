@@ -11,7 +11,13 @@
 	{	
 		public function index()
 		{
-			$this->redirect('/user/index');
+			$userDAO = new UserDAO();
+
+        	self::setViewParam('listUsers', $userDAO->list());
+
+			$this->render('/user/index');
+
+			Session::clearMessage();
 		}
 
 		// Método que renderiza a página de cadastro de novo usuário
@@ -29,11 +35,11 @@
 		{
 			$user = new User();
 			
-			$user->setNameUser($_POST['nameUser']);
-			$user->setEmailUser($_POST['emailUser']);
-			$user->setPassUser($_POST['passUser']);
-			$user->setTypeUser($_POST['typeUser']);
-			$user->setStatusUser($_POST['statusUser']);
+			$user->setNameUser($_POST['name_user']);
+			$user->setEmailUser($_POST['email_user']);
+			$user->setPassUser($_POST['pass_user']);
+			$user->setTypeUser($_POST['type_user']);
+			$user->setStatusUser($_POST['status_user']);
 			
 			/*
 			echo "<pre>";
@@ -54,7 +60,7 @@
 			
 			$userDAO = new UserDAO();
 
-			if($userDAO->checksEmail($_POST['emailUser'])){
+			if($userDAO->checksEmail($_POST['email_user'])){
 	            Session::saveMessage("E-mail não disponível!");
 	            $this->redirect('/user/register');
 	        }
@@ -69,7 +75,7 @@
 		
 		public function success()
 	    {
-	        if(Session::returnValueForm('nameUser')) {
+	        if(Session::returnValueForm('name_user')) {
 	            $this->render('/user/success');
 
 	            Session::clearForm();
