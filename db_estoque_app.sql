@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Fev-2022 às 22:53
--- Versão do servidor: 10.4.18-MariaDB
--- versão do PHP: 8.0.3
+-- Tempo de geração: 27-Fev-2022 às 17:46
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,64 +24,67 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `fornecedor`
+-- Estrutura da tabela `product`
 --
 
-CREATE TABLE `fornecedor` (
-  `id_fornecedor` int(11) NOT NULL,
-  `nome_fantasia_fornecedor` varchar(100) NOT NULL,
-  `razao_social_fornecedor` varchar(100) NOT NULL,
-  `cnpj_fornecedor` varchar(20) NOT NULL,
-  `endereco_fornecedor` varchar(100) NOT NULL,
-  `cidade_fornecedor` varchar(50) NOT NULL,
-  `uf_fornecedor` varchar(20) NOT NULL,
-  `email_fornecedor` varchar(50) NOT NULL,
-  `telefone_fornecedor` varchar(20) NOT NULL
+CREATE TABLE `product` (
+  `id_product` int(11) NOT NULL,
+  `ref_product` varchar(20) NOT NULL,
+  `name_product` varchar(100) NOT NULL,
+  `description_product` varchar(200) NOT NULL,
+  `cost_price_product` float NOT NULL,
+  `sale_price_product` float NOT NULL,
+  `stock_product` int(11) NOT NULL,
+  `category_product` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `fornecedor`
+-- Extraindo dados da tabela `product`
 --
 
-INSERT INTO `fornecedor` (`id_fornecedor`, `nome_fantasia_fornecedor`, `razao_social_fornecedor`, `cnpj_fornecedor`, `endereco_fornecedor`, `cidade_fornecedor`, `uf_fornecedor`, `email_fornecedor`, `telefone_fornecedor`) VALUES
-(1, 'Exemplo B. E. LTDA', 'Exemplo B. E.', '00.000.000/0001-00', 'Rua da Paz, 21', 'Belém', 'Pará', 'contato@exemplo.com.br', '(91) 0.0000-0000'),
-(2, 'Exemplo C. E. Ltda', 'Exemplo C. E.', '00.000.000/0001-01', 'Rua da Glória, 35', 'São Paulo', 'São Paulo', 'contato@exemplo.com.br', '(91) 0.0000-0001');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `produto`
---
-
-CREATE TABLE `produto` (
-  `id_produto` int(11) NOT NULL,
-  `referencia_produto` varchar(20) NOT NULL,
-  `nome_produto` varchar(100) NOT NULL,
-  `descricao_produto` varchar(200) NOT NULL,
-  `custo_produto` float NOT NULL,
-  `preco_produto` float NOT NULL,
-  `quantidade_produto` int(11) NOT NULL,
-  `categoria_produto` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `produto`
---
-
-INSERT INTO `produto` (`id_produto`, `referencia_produto`, `nome_produto`, `descricao_produto`, `custo_produto`, `preco_produto`, `quantidade_produto`, `categoria_produto`) VALUES
+INSERT INTO `product` (`id_product`, `ref_product`, `name_product`, `description_product`, `cost_price_product`, `sale_price_product`, `stock_product`, `category_product`) VALUES
 (1, '000.000AA', 'I Phone 12', '512 GB de armazenamento.', 4999.99, 9999.99, 10, 'Eletrônicos'),
 (2, '000.111BB', 'Samsung Galaxy A20', 'Cor azul, carregador e fone inclusos.', 900, 1200, 20, 'Eletrônicos'),
 (3, '000.001AA', 'I Phone 12 Pro', 'Cor preto, não acompanha carregador e fones.', 8999, 10000, 10, 'Eletrônicos'),
 (4, '000.003AA', 'I Phone 11', 'Cor branco, não acompanha carregador e fones.', 4999.99, 9999.99, 10, 'Eletrônicos'),
-(5, '000.003AA', 'I Phone 11', 'Cor preto, não acompanha carregador e fones.', 4999.99, 9999.99, 20, 'Eletrônicos');
+(5, '000.003AA', 'I Phone 11', 'Cor preto, não acompanha carregador e fones.', 4999.99, 9999.99, 20, 'Eletrônicos'),
+(6, '000.111CC', 'I Phone 10', '256 GB de armazenamento, cor preto.', 4000, 6599, 5, 'Eletrônicos');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura da tabela `supplier`
 --
 
-CREATE TABLE `usuario` (
+CREATE TABLE `supplier` (
+  `id_supplier` int(11) NOT NULL,
+  `name_supplier` varchar(100) NOT NULL,
+  `social_supplier` varchar(100) NOT NULL,
+  `cnpj_supplier` varchar(20) NOT NULL,
+  `adress_supplier` varchar(100) NOT NULL,
+  `city_supplier` varchar(50) NOT NULL,
+  `state_supplier` varchar(20) NOT NULL,
+  `email_supplier` varchar(50) NOT NULL,
+  `phone_supplier` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `supplier`
+--
+
+INSERT INTO `supplier` (`id_supplier`, `name_supplier`, `social_supplier`, `cnpj_supplier`, `adress_supplier`, `city_supplier`, `state_supplier`, `email_supplier`, `phone_supplier`) VALUES
+(1, 'Exemplo B. E. LTDA', 'Exemplo B. E.', '00.000.000/0001-00', 'Rua da Paz, 21', 'Belém', 'Pará', 'contato@exemplo.com.br', '(91) 0.0000-0000'),
+(2, 'Exemplo C. E. Ltda', 'Exemplo C. E.', '00.000.000/0001-01', 'Rua da Glória, 35', 'São Paulo', 'São Paulo', 'contato@exemplo.com.br', '(91) 0.0000-0001'),
+(3, 'Exemplo C. D. LTDA', 'Exemplo C. D.', '00.000.000/0001-01', 'Rua das Flores, 30', 'Rio de Janeiro', 'Rio de Janeiro', 'contato@exemplo.com.br', '(91) 0.0000-0000'),
+(4, 'Exemplo Nova Empresa S.A', 'Exemplo Nova Empresa', '00.000.000/0001-03', 'Ruas das Tulipas, 90', 'Belo Horizonte', 'Minas Gerais', 'contato@exemplo.com.br', '(91) 0.0000-0011');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `user`
+--
+
+CREATE TABLE `user` (
   `id_usuario` int(11) NOT NULL,
   `nome_usuario` varchar(100) NOT NULL,
   `email_usuario` varchar(50) NOT NULL,
@@ -91,10 +94,10 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Extraindo dados da tabela `user`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `tipo_usuario`, `status_usuario`) VALUES
+INSERT INTO `user` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usuario`, `tipo_usuario`, `status_usuario`) VALUES
 (1, 'Paulo Victor', 'paulo@teste.com.br', '12345', 'Administrador', 'Ativado'),
 (2, 'João Carlos', 'joao@teste.com.br', '12345', 'Conferente', 'Ativado'),
 (3, 'Maria Silva', 'maria@teste.com.br', '12345', 'Conferente', 'Ativado'),
@@ -111,21 +114,21 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `email_usuario`, `senha_usu
 --
 
 --
--- Índices para tabela `fornecedor`
+-- Índices para tabela `product`
 --
-ALTER TABLE `fornecedor`
-  ADD PRIMARY KEY (`id_fornecedor`);
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id_product`);
 
 --
--- Índices para tabela `produto`
+-- Índices para tabela `supplier`
 --
-ALTER TABLE `produto`
-  ADD PRIMARY KEY (`id_produto`);
+ALTER TABLE `supplier`
+  ADD PRIMARY KEY (`id_supplier`);
 
 --
--- Índices para tabela `usuario`
+-- Índices para tabela `user`
 --
-ALTER TABLE `usuario`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
@@ -133,21 +136,21 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `fornecedor`
+-- AUTO_INCREMENT de tabela `product`
 --
-ALTER TABLE `fornecedor`
-  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `product`
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de tabela `produto`
+-- AUTO_INCREMENT de tabela `supplier`
 --
-ALTER TABLE `produto`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `supplier`
+  MODIFY `id_supplier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT de tabela `user`
 --
-ALTER TABLE `usuario`
+ALTER TABLE `user`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
