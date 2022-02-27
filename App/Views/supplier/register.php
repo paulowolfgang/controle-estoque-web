@@ -24,43 +24,43 @@
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> Nome fantasia do fornecedor </label>
-                         <input type="text" class="form-control" name="nameSupplier" value="<?php echo $Session::returnValueForm('nameSupplier'); ?>" required>
+                         <input type="text" class="form-control" name="name_supplier" value="<?php echo $Session::returnValueForm('name_supplier'); ?>" required>
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> Razão social do fornecedor </label>
-                         <input type="text" class="form-control" name="socialSupplier" value="<?php echo $Session::returnValueForm('socialSupplier'); ?>" required>
+                         <input type="text" class="form-control" name="social_supplier" value="<?php echo $Session::returnValueForm('social_supplier'); ?>" required>
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 form-group">
                          <label> Endereço do fornecedor </label>
-                         <input type="text" class="form-control" name="adressSupplier" value="<?php echo $Session::returnValueForm('adressSupplier'); ?>" required>
+                         <input type="text" class="form-control" name="adress_supplier" value="<?php echo $Session::returnValueForm('adress_supplier'); ?>" required>
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-8 form-group">
                          <label> Cidade do fornecedor </label>
-                         <input type="text" class="form-control" name="citySupplier" value="<?php echo $Session::returnValueForm('citySupplier'); ?>" required>
+                         <input type="text" class="form-control" name="city_supplier" value="<?php echo $Session::returnValueForm('city_supplier'); ?>" required>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> Estado do fornecedor </label>
-                         <input type="text" class="form-control" name="stateSupplier" value="<?php echo $Session::returnValueForm('stateSupplier'); ?>" required>
+                         <input type="text" class="form-control" name="state_supplier" value="<?php echo $Session::returnValueForm('state_supplier'); ?>" required>
                     </div>
                </div>
                <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> CNPJ do fornecedor </label>
-                         <input type="text" class="form-control" name="cnpjSupplier" value="<?php echo $Session::returnValueForm('cnpjSupplier'); ?>" required>
+                         <input type="text" class="form-control" name="cnpj_supplier" value="<?php echo $Session::returnValueForm('cnpj_supplier'); ?>" required>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> E-mail do fornecedor </label>
-                         <input type="email" class="form-control" name="emailSupplier" value="<?php echo $Session::returnValueForm('emailSupplier'); ?>" required>
+                         <input type="email" class="form-control" name="email_supplier" value="<?php echo $Session::returnValueForm('email_supplier'); ?>" required>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                          <label> Telefone do fornecedor </label>
-                         <input type="text" class="form-control" name="phoneSupplier" value="<?php echo $Session::returnValueForm('phoneSupplier'); ?>" required>
+                         <input type="text" class="form-control" name="phone_supplier" value="<?php echo $Session::returnValueForm('phone_supplier'); ?>" required>
                     </div>
                </div>
                <button type="submit" class="btn btn-success">Cadastrar</button>

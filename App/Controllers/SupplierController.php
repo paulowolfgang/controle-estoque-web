@@ -36,14 +36,14 @@
 			// Implementação do método de salvar
 			$supplier = new Supplier();
 			
-			$supplier->setNameSupplier($_POST['nameSupplier']);
-			$supplier->setSocialSupplier($_POST['socialSupplier']);
-			$supplier->setAdressSupplier($_POST['adressSupplier']);
-			$supplier->setCitySupplier($_POST['citySupplier']);
-			$supplier->setStateSupplier($_POST['stateSupplier']);
-			$supplier->setCnpjSupplier($_POST['cnpjSupplier']);
-			$supplier->setEmailSupplier($_POST['emailSupplier']);
-			$supplier->setPhoneSupplier($_POST['phoneSupplier']);
+			$supplier->setNameSupplier($_POST['name_supplier']);
+			$supplier->setSocialSupplier($_POST['social_supplier']);
+			$supplier->setAdressSupplier($_POST['adress_supplier']);
+			$supplier->setCitySupplier($_POST['city_supplier']);
+			$supplier->setStateSupplier($_POST['state_supplier']);
+			$supplier->setCnpjSupplier($_POST['cnpj_supplier']);
+			$supplier->setEmailSupplier($_POST['email_supplier']);
+			$supplier->setPhoneSupplier($_POST['phone_supplier']);
 			
 			/*
 			echo "<pre>";
