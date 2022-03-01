@@ -73,6 +73,28 @@
 			}
 		}
 		
+		// Método de recuperação da view de edição do usuário
+		public function edit($params)
+		{
+			$id_user = $params[0];
+
+			$userDAO = new UserDAO();
+
+			$user = $userDAO->list($id_user);
+			
+			if(!$user){
+				Session::saveMessage("O usuário não existe!");
+				$this->redirect('/user');
+			}
+			
+			self::setViewParam('user', $user);
+
+			$this->render('/user/edit');
+
+			Session::clearMessage();
+
+		}
+
 		public function success()
 	    {
 	        if(Session::returnValueForm('name_user')) {
