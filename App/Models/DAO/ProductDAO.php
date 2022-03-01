@@ -62,7 +62,7 @@ class ProductDAO extends BaseDAO
     public function toupdate(Product $product) 
     {
         try
-        {
+        {   
             $ref_product         = $product->getRefProduct();
             $name_product        = $product->getNameProduct();
             $description_product = $product->getDescriptionProduct();
@@ -83,7 +83,7 @@ class ProductDAO extends BaseDAO
                     ':stock_product'=>$stock_product,
                     ':category_product'=>$category_product,
                 ],
-                "id_product = :id_product"
+                "ref_product = :ref_product"
             );
 
         }catch (\Exception $e){

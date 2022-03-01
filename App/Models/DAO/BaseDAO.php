@@ -36,4 +36,22 @@ abstract class BaseDAO
             return false;
         }
     }
+
+    public function update($table, $cols, $values, $where=null) 
+    {
+        if(!empty($table) && !empty($cols) && !empty($values))
+        {
+            if($where)
+            {
+                $where = " WHERE $where ";
+            }
+
+            $stmt = $this->connection->prepare("UPDATE $table SET $cols $where");
+            $stmt->execute($values);
+
+            return $stmt->rowCount();
+        }else{
+            return false;
+        }
+    }
 }

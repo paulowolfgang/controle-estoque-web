@@ -72,7 +72,7 @@
 			}
 		}
 
-		// Método de edição de cadastro de produto
+		// Método de recuperação da view de edição do produto
 		public function edit($params)
 		{
 			$id_product = $params[0];
@@ -93,18 +93,19 @@
 			Session::clearMessage();
 
 		}
-		/*
+		
+		// Método de edição de cadastro de produto
 		public function toupdate()
 		{
-
 			$Product = new Product();
+			
 			$Product->setRefProduct($_POST['ref_product']);
 			$Product->setNameProduct($_POST['name_product']);
 			$Product->setDescriptionProduct($_POST['description_product']);
 			$Product->setCostPriceProduct($_POST['cost_price_product']);
 			$Product->setSalePriceProduct($_POST['sale_price_product']);
 			$Product->setStockProduct($_POST['stock_product']);
-			$Product->setCategoryProducts($_POST['category_product']);
+			$Product->setCategoryProduct($_POST['category_product']);
 
 			Session::saveForm($_POST);
 
@@ -113,12 +114,12 @@
 
 			if($resultValidation->getErros()){
 				Session::saveError($resultValidation->getErros());
-				$this->redirect('/product/edit/'.$_POST['id_product']);
+				$this->redirect('/product/edit/'. $_POST['id_product']);
 			}
 
 			$productDAO = new ProductDAO();
 
-			$productDAO->toUpdate($Product);
+			$productDAO->toupdate($Product);
 
 			Session::clearForm();
 			Session::clearMessage();
@@ -127,7 +128,7 @@
 			$this->redirect('/product');
 
 		}
-		*/
+		
 
 		// Renderização da página de sucesso de cadastro
 		public function success()
