@@ -60,7 +60,9 @@
                         </select>
                     </div>
                </div>
-               <button type="submit" class="btn btn-success">Cadastrar</button>
+               <div class="mt-3">
+                    <button type="submit" class="btn btn-success">Cadastrar</button>     
+               </div>
           </form>
      </div>
      <!-- ### Fim do formulário de cadastro -->

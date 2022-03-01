@@ -11,7 +11,7 @@ class ProductDAO extends BaseDAO
         if($id_product)
         {
             $result = $this->select(
-                "SELECT ref_product, name_product, stock_product FROM product WHERE id_product = $id_product"
+                "SELECT * FROM product WHERE id_product = $id_product"
             );
 
             return $result->fetchObject(Product::class);
@@ -29,7 +29,7 @@ class ProductDAO extends BaseDAO
         return false;
     }
 
-    public  function save(Product $product) {
+    public function save(Product $product) {
         try {
 
             $ref_product          = $product->getRefProduct();
@@ -56,6 +56,38 @@ class ProductDAO extends BaseDAO
 
         }catch (\Exception $e){
             throw new \Exception("Erro ao cadastrar os dados.", 500);
+        }
+    }
+
+    public function toupdate(Product $product) 
+    {
+        try
+        {
+            $ref_product         = $product->getRefProduct();
+            $name_product        = $product->getNameProduct();
+            $description_product = $product->getDescriptionProduct();
+            $cost_price_product  = $product->getCostPriceProduct();
+            $sale_price_product  = $product->getSalePriceProduct();
+            $stock_product       = $product->getStockProduct();
+            $category_product    = $product->getCategoryProduct();
+
+            return $this->update(
+                'product',
+                "ref_product = :ref_product, name_product = :name_product, description_product = :description_product, cost_price_product = :cost_price_product, sale_price_product = :sale_price_product, stock_product = :stock_product, category_product = :category_product",
+                [
+                    ':ref_product'=>$ref_product,
+                    ':name_product'=>$name_product,
+                    ':description_product'=>$description_product,
+                    ':cost_price_product'=>$cost_price_product,
+                    ':sale_price_product'=>$sale_price_product,
+                    ':stock_product'=>$stock_product,
+                    ':category_product'=>$category_product,
+                ],
+                "id_product = :id_product"
+            );
+
+        }catch (\Exception $e){
+            throw new \Exception("Erro ao salvar os dados.", 500);
         }
     }
 }

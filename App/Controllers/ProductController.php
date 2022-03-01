@@ -72,6 +72,63 @@
 			}
 		}
 
+		// Método de edição de cadastro de produto
+		public function edit($params)
+		{
+			$id_product = $params[0];
+
+			$productDAO = new ProductDAO();
+
+			$product = $productDAO->list($id_product);
+			
+			if(!$product){
+				Session::saveMessage("O produto não existe!");
+				$this->redirect('/product');
+			}
+			
+			self::setViewParam('product', $product);
+
+			$this->render('/product/edit');
+
+			Session::clearMessage();
+
+		}
+		/*
+		public function toupdate()
+		{
+
+			$Product = new Product();
+			$Product->setRefProduct($_POST['ref_product']);
+			$Product->setNameProduct($_POST['name_product']);
+			$Product->setDescriptionProduct($_POST['description_product']);
+			$Product->setCostPriceProduct($_POST['cost_price_product']);
+			$Product->setSalePriceProduct($_POST['sale_price_product']);
+			$Product->setStockProduct($_POST['stock_product']);
+			$Product->setCategoryProducts($_POST['category_product']);
+
+			Session::saveForm($_POST);
+
+			$productValidation = new ProductValidation();
+			$resultValidation = $productValidation->validate($Product);
+
+			if($resultValidation->getErros()){
+				Session::saveError($resultValidation->getErros());
+				$this->redirect('/product/edit/'.$_POST['id_product']);
+			}
+
+			$productDAO = new ProductDAO();
+
+			$productDAO->toUpdate($Product);
+
+			Session::clearForm();
+			Session::clearMessage();
+			Session::clearError();
+
+			$this->redirect('/product');
+
+		}
+		*/
+
 		// Renderização da página de sucesso de cadastro
 		public function success()
 	    {

@@ -4,6 +4,7 @@
         <div class="col-md-12 mt-5 mb-3">
             <a href="http://<?php echo APP_HOST; ?>/product/register" class="btn btn-success btn-sm">Adicionar Novo</a>
         </div>
+        
         <div class="col-md-12">
             <?php if($Session::returnMessage()){ ?>
                 <div class="alert alert-warning" role="alert">

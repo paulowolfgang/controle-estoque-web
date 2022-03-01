@@ -113,12 +113,12 @@
 	    {
 	        return $this->controllerName;
 	    }
-		/*
+		
 	    public function getParams()
 	    {
 	        return $this->params;
 	    }
-		*/
+		
 	    private function checkArray ($array, $key)
 	    {
 	        if (isset($array[$key]) && !empty($array[$key]))
