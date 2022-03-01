@@ -94,7 +94,41 @@
 
 		}
 
-		
+		// Método de edição de cadastro de fornecedores
+		public function toupdate()
+		{
+			$Supplier = new Supplier();
+			
+			$Supplier->setNameSupplier($_POST['name_supplier']);
+			$Supplier->setSocialSupplier($_POST['social_supplier']);
+			$Supplier->setAdressSupplier($_POST['adress_supplier']);
+			$Supplier->setCitySupplier($_POST['city_supplier']);
+			$Supplier->setStateSupplier($_POST['state_supplier']);
+			$Supplier->setCnpjSupplier($_POST['cnpj_supplier']);
+			$Supplier->setEmailSupplier($_POST['email_supplier']);
+			$Supplier->setPhoneSupplier($_POST['phone_supplier']);
+
+			Session::saveForm($_POST);
+
+			$supplierValidation = new SupplierValidation();
+			$resultValidation = $supplierValidation->validate($Supplier);
+
+			if($resultValidation->getErros()){
+				Session::saveError($resultValidation->getErros());
+				$this->redirect('/supplier/edit/'. $_POST['id_supplier']);
+			}
+
+			$supplierDAO = new SupplierDAO();
+
+			$supplierDAO->toupdate($Supplier);
+
+			Session::clearForm();
+			Session::clearMessage();
+			Session::clearError();
+
+			$this->redirect('/supplier');
+
+		}
 
 		public function success()
 	    {
