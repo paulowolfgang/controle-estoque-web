@@ -128,7 +128,6 @@
 			$this->redirect('/product');
 
 		}
-		
 
 		// Renderização da página de sucesso de cadastro
 		public function success()

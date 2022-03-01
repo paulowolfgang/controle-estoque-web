@@ -72,6 +72,30 @@
 			}
 		}
 
+		// Método de recuperação da view de edição do fornecedor
+		public function edit($params)
+		{
+			$id_supplier = $params[0];
+
+			$supplierDAO = new SupplierDAO();
+
+			$supplier = $supplierDAO->list($id_supplier);
+			
+			if(!$supplier){
+				Session::saveMessage("O fornecedor não existe!");
+				$this->redirect('/product');
+			}
+			
+			self::setViewParam('supplier', $supplier);
+
+			$this->render('/supplier/edit');
+
+			Session::clearMessage();
+
+		}
+
+		
+
 		public function success()
 	    {
 	        $this->render('/supplier/success');
