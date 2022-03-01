@@ -20,40 +20,40 @@
 
             <div class="mb-5">
                 <?php
-                    echo var_dump($viewVar['user']);
+                    //echo var_dump($viewVar['user']);
                 ?>
                 <form action="http://<?php echo APP_HOST; ?>/user/toupdate" method="post">
                     <div class="row">
                         <div class="col-sm-12 form-group">
                             <label> Nome do usuário </label>
-                            <input type="text" class="form-control" name="name_user" value="<?php //echo  ?>" required>
+                            <input type="text" class="form-control" name="name_user" value="<?php echo $viewVar['user']->getNameUser(); ?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
                             <label> E-mail do usuário </label>
-                            <input type="email" class="form-control" name="email_user" value="<?php //echo  ?>" required>
+                            <input type="email" class="form-control" name="email_user" value="<?php echo $viewVar['user']->getEmailUser(); ?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 form-group">
                             <label> Senha do usuário </label>
-                            <input type="text" class="form-control" name="pass_user" value="<?php //echo  ?>" required>
+                            <input type="text" class="form-control" name="pass_user" value="<?php echo $viewVar['user']->getPassUser(); ?>" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                             <label> Tipo do usuário </label>
                             <select class="form-control" name="type_user">
-                                <option> Administrador </option>
-                                <option> Conferente </option>
+                                <option value="0" <?php echo $viewVar['user']->getTypeUser() == 'Administrador' ? 'selected' : '';?> > Administrador </option>
+                                <option value="1" <?php echo $viewVar['user']->getTypeUser() == 'Conferente' ? 'selected' : '';?> > Conferente </option>
                             </select>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                             <label> Status do usuário </label>
                             <select class="form-control" name="status_user">
-                                <option>Ativado</option>
-                                <option>Desativado</option>
+                                <option value="0" <?php echo $viewVar['user']->getStatusUser() == 'Ativado' ? 'selected' : '';?> >Ativado</option>
+                                <option value="1" <?php echo $viewVar['user']->getStatusUser() == 'Desativado' ? 'selected' : '';?> >Desativado</option>
                             </select>
                         </div>
                     </div>
