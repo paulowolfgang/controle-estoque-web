@@ -70,4 +70,32 @@ class UserDAO extends BaseDAO
             throw new \Exception("Erro ao cadastrar os dados.", 500);
         }
     }
+
+    public function toupdate(User $user)
+    {
+        try
+        {   
+            $name_user   = $user->getNameUser();
+            $email_user  = $user->getEmailUser();
+            $pass_user   = $user->getPassUser();
+            $type_user   = $user->getTypeUser();
+            $status_user = $user->getStatusUser();
+
+            return $this->update(
+                'user',
+                "name_user = :name_user, email_user = :email_user, pass_user = :pass_user, type_user = :type_user, status_user = :status_user",
+                [
+                    ':name_user'=>$name_user,
+                    ':email_user'=>$email_user,
+                    ':pass_user'=>$pass_user,
+                    ':type_user'=>$type_user,
+                    ':status_user'=>$status_user,
+                ],
+                "name_user = :name_user"
+            );
+
+        }catch (\Exception $e){
+            throw new \Exception("Erro ao salvar os dados.", 500);
+        }
+    }
 }

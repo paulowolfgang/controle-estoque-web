@@ -45,15 +45,15 @@
                         <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                             <label> Tipo do usuário </label>
                             <select class="form-control" name="type_user">
-                                <option value="0" <?php echo $viewVar['user']->getTypeUser() == 'Administrador' ? 'selected' : '';?> > Administrador </option>
-                                <option value="1" <?php echo $viewVar['user']->getTypeUser() == 'Conferente' ? 'selected' : '';?> > Conferente </option>
+                                <option value="Administrador" <?php echo $viewVar['user']->getTypeUser() == 'Administrador' ? 'selected' : '';?> > Administrador </option>
+                                <option value="Conferente" <?php echo $viewVar['user']->getTypeUser() == 'Conferente' ? 'selected' : '';?> > Conferente </option>
                             </select>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-4 form-group">
                             <label> Status do usuário </label>
                             <select class="form-control" name="status_user">
-                                <option value="0" <?php echo $viewVar['user']->getStatusUser() == 'Ativado' ? 'selected' : '';?> >Ativado</option>
-                                <option value="1" <?php echo $viewVar['user']->getStatusUser() == 'Desativado' ? 'selected' : '';?> >Desativado</option>
+                                <option value="Ativado" <?php echo $viewVar['user']->getStatusUser() == 'Ativado' ? 'selected' : '';?> >Ativado</option>
+                                <option value="Desativado" <?php echo $viewVar['user']->getStatusUser() == 'Desativado' ? 'selected' : '';?> >Desativado</option>
                             </select>
                         </div>
                     </div>

@@ -95,6 +95,39 @@
 
 		}
 
+		// Método de edição de cadastro de usuários
+		public function toupdate()
+		{
+			$User = new User();
+			
+			$User->setNameUser($_POST['name_user']);
+			$User->setEmailUser($_POST['email_user']);
+			$User->setPassUser($_POST['pass_user']);
+			$User->setTypeUser($_POST['type_user']);
+			$User->setStatusUser($_POST['status_user']);
+
+			Session::saveForm($_POST);
+
+			$userValidation = new UserValidation();
+			$resultValidation = $userValidation->validate($User);
+
+			if($resultValidation->getErros()){
+				Session::saveError($resultValidation->getErros());
+				$this->redirect('/user/edit/'. $_POST['id_user']);
+			}
+
+			$userDAO = new UserDAO();
+
+			$userDAO->toupdate($User);
+
+			Session::clearForm();
+			Session::clearMessage();
+			Session::clearError();
+
+			$this->redirect('/user');
+
+		}
+
 		public function success()
 	    {
 	        if(Session::returnValueForm('name_user')) {
