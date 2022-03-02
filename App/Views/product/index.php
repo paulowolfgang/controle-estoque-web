@@ -50,7 +50,7 @@
                                 <td>
                                     <center>
                                         <a href="http://<?php echo APP_HOST; ?>/product/edit/<?php echo $product->getIdProduct(); ?>" class="btn btn-info btn-sm">Editar</a>
-                                        <a href="http://<?php echo APP_HOST; ?>/product/delet/<?php echo $product->getIdProduct(); ?>" class="btn btn-danger btn-sm">Remover</a>
+                                        <a href="http://<?php echo APP_HOST; ?>/product/delete/<?php echo $product->getIdProduct(); ?>" class="btn btn-danger btn-sm">Remover</a>
                                     </center>
                                 </td>
                             </tr>

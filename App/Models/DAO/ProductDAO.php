@@ -90,4 +90,16 @@ class ProductDAO extends BaseDAO
             throw new \Exception("Erro ao salvar os dados.", 500);
         }
     }
+
+    public function exclusion(Product $product)
+    {
+        try {
+            $id_product = $product->getIdProduct();
+
+            return $this->delete('product',"id_product = $id_product");
+
+        }catch (Exception $e){
+            throw new \Exception("Erro ao deletar o produto", 500);
+        }
+    }
 }

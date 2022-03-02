@@ -72,6 +72,12 @@
 			}
 		}
 
+		// Renderização da página de sucesso de cadastro
+		public function success()
+	    {
+	        $this->render('/product/success');
+	    }
+
 		// Método de recuperação da view de edição do produto
 		public function edit($params)
 		{
@@ -129,10 +135,45 @@
 
 		}
 
-		// Renderização da página de sucesso de cadastro
-		public function success()
-	    {
-	        $this->render('/product/success');
-	    }
+		// Método de renderização da view de exclusão do produto
+		public function delete($params)
+		{
+			$id_product = $params[0];
+
+			$productDAO = new ProductDAO();
+
+			$product = $productDAO->list($id_product);
+
+			if(!$product){
+				Session::saveMessage("O produto não existe!");
+				$this->redirect('/product');
+			}
+
+			self::setViewParam('product',$product);
+
+			$this->render('/product/delete');
+
+			Sessao::limpaMensagem();
+
+		}
+		
+		// Método de exclusão do produto
+		public function exclusion()
+		{
+			$Product = new Product();
+			$Product->setIdProduct($_POST['id_product']);
+
+			$productDAO = new ProductDAO();
+
+			if(!$productDAO->exclusion($Product)){
+				Session::saveMessage("O produto não existe!");
+				$this->redirect('/product');
+			}
+
+			Session::saveMessage("Produto excluído com sucesso!");
+
+			$this->redirect('/product');
+
+		}
 	}
 	

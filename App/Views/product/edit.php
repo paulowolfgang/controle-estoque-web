@@ -53,12 +53,12 @@
                         <div class="col-sm-12 col-md-3 col-lg-3 form-group">
                             <label> Categoria </label>
                             <select class="form-control" name="category_product">
-                                <option value="0" <?php echo $viewVar['product']->getCategoryProduct() == 'Açougue' ? 'selected' : '';?> >Açougue</option>
-                                <option value="1" <?php echo $viewVar['product']->getCategoryProduct() == 'Farmácia' ? 'selected' : '';?> >Farmácia</option>
-                                <option value="2" <?php echo $viewVar['product']->getCategoryProduct() == 'Eletrônicos' ? 'selected' : '';?> >Eletrônicos</option>
-                                <option value="3" <?php echo $viewVar['product']->getCategoryProduct() == 'Eletros' ? 'selected' : '';?> >Eletros</option>
-                                <option value="4" <?php echo $viewVar['product']->getCategoryProduct() == 'Bebidas' ? 'selected' : '';?> >Bebidas</option>
-                                <option value="5" <?php echo $viewVar['product']->getCategoryProduct() == 'Vestuário' ? 'selected' : '';?> >Vestuário</option>
+                                <option value="Açougue" <?php echo $viewVar['product']->getCategoryProduct() == 'Açougue' ? 'selected' : '';?> >Açougue</option>
+                                <option value="Farmácia" <?php echo $viewVar['product']->getCategoryProduct() == 'Farmácia' ? 'selected' : '';?> >Farmácia</option>
+                                <option value="Eletrônicos" <?php echo $viewVar['product']->getCategoryProduct() == 'Eletrônicos' ? 'selected' : '';?> >Eletrônicos</option>
+                                <option value="Eletros" <?php echo $viewVar['product']->getCategoryProduct() == 'Eletros' ? 'selected' : '';?> >Eletros</option>
+                                <option value="Bebidas" <?php echo $viewVar['product']->getCategoryProduct() == 'Bebidas' ? 'selected' : '';?> >Bebidas</option>
+                                <option value="Vestuário" <?php echo $viewVar['product']->getCategoryProduct() == 'Vestuário' ? 'selected' : '';?> >Vestuário</option>
                             </select>
                         </div>
                     </div>

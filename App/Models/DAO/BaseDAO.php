@@ -54,4 +54,22 @@ abstract class BaseDAO
             return false;
         }
     }
+
+    public function delete($table, $where=null) 
+    {
+        if(!empty($table))
+        {
+            if($where)
+            {
+                $where = " WHERE $where ";
+            }
+
+            $stmt = $this->connection->prepare("DELETE FROM $table $where");
+            $stmt->execute();
+
+            return $stmt->rowCount();
+        }else{
+            return false;
+        }
+    }
 }
