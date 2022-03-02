@@ -94,4 +94,16 @@ class SupplierDAO extends BaseDAO
             throw new \Exception("Erro ao salvar os dados.", 500);
         }
     }
+
+    public function exclusion(Supplier $supplier)
+    {
+        try {
+            $id_supplier = $supplier->getIdSupplier();
+
+            return $this->delete('supplier',"id_supplier = $id_supplier");
+
+        }catch (Exception $e){
+            throw new \Exception("Erro ao deletar o fornecedor", 500);
+        }
+    }
 }

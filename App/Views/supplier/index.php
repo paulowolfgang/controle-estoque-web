@@ -4,6 +4,7 @@
         <div class="col-md-12 mt-5 mb-3">
             <a href="http://<?php echo APP_HOST; ?>/supplier/register" class="btn btn-success btn-sm">Adicionar Novo</a>
         </div>
+        
         <div class="col-md-12">
             <?php if($Session::returnMessage()){ ?>
                 <div class="alert alert-warning" role="alert">
@@ -49,7 +50,7 @@
                                 <td>
                                     <center>
                                         <a href="http://<?php echo APP_HOST; ?>/supplier/edit/<?php echo $supplier->getIdSupplier(); ?>" class="btn btn-info btn-sm">Editar</a>
-                                        <a href="http://<?php echo APP_HOST; ?>/supplier/delet/<?php echo $supplier->getIdSupplier(); ?>" class="btn btn-danger btn-sm">Remover</a>
+                                        <a href="http://<?php echo APP_HOST; ?>/supplier/delete/<?php echo $supplier->getIdSupplier(); ?>" class="btn btn-danger btn-sm">Remover</a>
                                     </center>
                                 </td>
                             </tr>

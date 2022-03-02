@@ -72,6 +72,11 @@
 			}
 		}
 
+		public function success()
+	    {
+	        $this->render('/supplier/success');
+	    }
+
 		// Método de recuperação da view de edição do fornecedor
 		public function edit($params)
 		{
@@ -130,8 +135,43 @@
 
 		}
 
-		public function success()
-	    {
-	        $this->render('/supplier/success');
-	    }
+		// Método de renderização da view de exclusão do fornecedor
+		public function delete($params)
+		{
+			$id_supplier = $params[0];
+
+			$supplierDAO = new SupplierDAO();
+
+			$supplier = $supplierDAO->list($id_supplier);
+
+			if(!$supplier){
+				Session::saveMessage("O fornecedor não existe!");
+				$this->redirect('/supplier');
+			}
+
+			self::setViewParam('supplier', $supplier);
+
+			$this->render('/supplier/delete');
+
+			Session::clearMessage();
+
+		}
+		
+		// Método de exclusão do fornecedor
+		public function exclusion()
+		{
+			$Supplier = new Supplier();
+			$Supplier->setIdSupplier($_POST['id_supplier']);
+
+			$supplierDAO = new SupplierDAO();
+
+			if(!$supplierDAO->exclusion($Supplier)){
+				Session::saveMessage("O fornecedor não existe!");
+				$this->redirect('/supplier');
+			}
+
+			Session::saveMessage("Fornecedor excluído com sucesso!");
+
+			$this->redirect('/supplier');
+		}
 	}
