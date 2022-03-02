@@ -73,6 +73,18 @@
 			}
 		}
 		
+		public function success()
+	    {
+	        if(Session::returnValueForm('name_user')) {
+	            $this->render('/user/success');
+
+	            Session::clearForm();
+	            Session::clearMessage();
+	        }else{
+	            $this->redirect('/');
+	        }
+	    }
+
 		// Método de recuperação da view de edição do usuário
 		public function edit($params)
 		{
@@ -128,15 +140,43 @@
 
 		}
 
-		public function success()
-	    {
-	        if(Session::returnValueForm('name_user')) {
-	            $this->render('/user/success');
+		// Método de renderização da view de exclusão do usuário
+		public function delete($params)
+		{
+			$id_user = $params[0];
 
-	            Session::clearForm();
-	            Session::clearMessage();
-	        }else{
-	            $this->redirect('/');
-	        }
-	    }
+			$userDAO = new UserDAO();
+
+			$user = $userDAO->list($id_user);
+
+			if(!$user){
+				Session::saveMessage("O usuário não existe!");
+				$this->redirect('/user');
+			}
+
+			self::setViewParam('user', $user);
+
+			$this->render('/user/delete');
+
+			Session::clearMessage();
+
+		}
+		
+		// Método de exclusão do usuário
+		public function exclusion()
+		{
+			$User = new User();
+			$User->setIdUser($_POST['id_user']);
+
+			$userDAO = new UserDAO();
+
+			if(!$userDAO->exclusion($User)){
+				Session::saveMessage("O usuário não existe!");
+				$this->redirect('/user');
+			}
+
+			Session::saveMessage("Usuário excluído com sucesso!");
+
+			$this->redirect('/user');
+		}
 	}

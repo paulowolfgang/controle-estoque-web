@@ -98,4 +98,16 @@ class UserDAO extends BaseDAO
             throw new \Exception("Erro ao salvar os dados.", 500);
         }
     }
+
+    public function exclusion(User $user)
+    {
+        try {
+            $id_user = $user->getIdUser();
+
+            return $this->delete('user',"id_user = $id_user");
+
+        }catch (Exception $e){
+            throw new \Exception("Erro ao deletar o usuário", 500);
+        }
+    }
 }

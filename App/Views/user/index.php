@@ -49,7 +49,7 @@
                                 <td>
                                     <center>
                                         <a href="http://<?php echo APP_HOST; ?>/user/edit/<?php echo $user->getIdUser(); ?>" class="btn btn-info btn-sm">Editar</a>
-                                        <a href="http://<?php echo APP_HOST; ?>/delet/delet/<?php echo $user->getIdUser(); ?>" class="btn btn-danger btn-sm">Remover</a>
+                                        <a href="http://<?php echo APP_HOST; ?>/user/delete/<?php echo $user->getIdUser(); ?>" class="btn btn-danger btn-sm">Remover</a>
                                     </center>
                                 </td>
                             </tr>
