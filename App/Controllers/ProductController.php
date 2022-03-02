@@ -149,11 +149,11 @@
 				$this->redirect('/product');
 			}
 
-			self::setViewParam('product',$product);
+			self::setViewParam('product', $product);
 
 			$this->render('/product/delete');
 
-			Sessao::limpaMensagem();
+			Session::clearMessage();
 
 		}
 		
@@ -176,4 +176,3 @@
 
 		}
 	}
-	
