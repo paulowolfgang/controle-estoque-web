@@ -22,7 +22,7 @@
 
 		public function setIdSupplier($id_supplier)
 		{
-			$this->$id_supplier = $id_supplier;
+			$this->id_supplier = $id_supplier;
 		}
 
 		### Name Supplier ###
