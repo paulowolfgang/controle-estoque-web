@@ -110,4 +110,13 @@ class UserDAO extends BaseDAO
             throw new \Exception("Erro ao deletar o usuário", 500);
         }
     }
+
+    public function totalUsers()
+    {
+        $query = $this->select(
+            "SELECT COUNT(id_user) FROM user"
+        );
+
+        return $query->fetchColumn();
+    }
 }

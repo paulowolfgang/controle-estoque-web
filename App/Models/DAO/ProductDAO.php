@@ -102,4 +102,13 @@ class ProductDAO extends BaseDAO
             throw new \Exception("Erro ao deletar o produto", 500);
         }
     }
+
+    public function totalProducts()
+    {
+        $query = $this->select(
+            "SELECT COUNT(id_product) FROM product"
+        );
+
+        return $query->fetchColumn();
+    }
 }

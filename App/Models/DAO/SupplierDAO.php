@@ -106,4 +106,13 @@ class SupplierDAO extends BaseDAO
             throw new \Exception("Erro ao deletar o fornecedor", 500);
         }
     }
+
+    public function totalSuppliers()
+    {
+        $query = $this->select(
+            "SELECT COUNT(id_supplier) FROM supplier"
+        );
+
+        return $query->fetchColumn();
+    }
 }

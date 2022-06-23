@@ -7,7 +7,7 @@
                     </div>
                     <div class="card-body text-dark">
                          <h5 class="card-title">Total de cadastros</h5>
-                         <p class="card-text">08</p>
+                         <p class="card-text"><?php echo var_dump($viewVar['totalUser']); ?></p>
                     </div>
                </div>
           </div>
@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-body text-dark">
                          <h5 class="card-title">Total de cadastros</h5>
-                         <p class="card-text">06</p>
+                         <p class="card-text"><?php echo var_dump($viewVar['totalSupplier']); ?></p>
                     </div>
                </div>
           </div>
@@ -29,7 +29,7 @@
                     </div>
                     <div class="card-body text-dark">
                          <h5 class="card-title">Total de cadastros</h5>
-                         <p class="card-text">45</p>
+                         <p class="card-text"><?php echo var_dump($viewVar['totalProduct']); ?></p>
                     </div>
                </div>
           </div>
